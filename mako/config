@@ -1,0 +1,11 @@
+font=ttf-jetbrains-mono-nerd 14
+sort=-time
+layer=overlay
+anchor=top-right
+margin=15
+padding=0,15,25
+border-size=2
+border-radius=12
+icons=1
+default-timeout=5000
+ignore-timeout=1
