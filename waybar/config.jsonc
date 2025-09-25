@@ -32,6 +32,7 @@
 	],
 
 	"modules-right": [
+		"custom/updates",
 		"pulseaudio",
 		"bluetooth",
 		"network",
@@ -96,6 +97,18 @@
 //		----> Modules-Right <-----
 //-----------------------------------------------------------------------
 
+
+
+	"custom/updates": {
+		"format": "   {}",
+		"escape": true,
+		"return-type": "json",
+		"exec": "~/.config/scripts/waybar/updates.sh",
+		"interval": 1800,
+		"signal": 1,
+		"hide-empty-text": true,
+		"on-click": "~/.config/scripts/settings/install_updates_ui"
+	},
 
 
   	// System

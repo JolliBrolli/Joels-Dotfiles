@@ -8,3 +8,5 @@
 [user]
 	name = Joel
 	email = 169495974+JolliBrolli@users.noreply.github.com
+[core]
+	editor = nvim

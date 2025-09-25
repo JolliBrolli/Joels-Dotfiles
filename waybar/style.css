@@ -1,12 +1,12 @@
 * {
 	border: none;
-	font-family:"ttf-jetbrains-mono-nerd";
+	font-family:"Monaspace Radon Nerd Font";
 	font-size: 13px;
 	min-height: 0px;
 }
 
 window#waybar {
-	background-color: rgba(0, 0, 0, 0.15);
+	background-color: rgba(0, 0, 0, 0.35);
 	color: white;
 }
 
