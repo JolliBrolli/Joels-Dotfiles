@@ -10,6 +10,34 @@ window#waybar {
 	color: white;
 }
 
+/* Option 1: Simple vertical line separators with more spacing */
+.modules-left > widget:not(:last-child),
+.modules-center > widget:not(:last-child),
+.modules-right > widget:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 12px;
+    padding-right: 12px;
+}
+
+
+
+/* Option 2: Alternative with pseudo-element separators (comment out Option 1 if using this) */
+/*
+.modules-left > widget + widget::before,
+.modules-center > widget + widget::before,
+.modules-right > widget + widget::before {
+    content: "│";
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 8px;
+    font-weight: normal;
+}
+
+.modules-left > widget + widget,
+.modules-center > widget + widget,
+.modules-right > widget + widget {
+    margin-left: 8px;
+}
+*/
 
 #window {
     font-weight: bold;
@@ -73,4 +101,11 @@ window#waybar {
 }
 
 #pulseaudio.muted {
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
 }
