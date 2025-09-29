@@ -80,6 +80,12 @@ echo ":: Searching for Flatpak updates..."
 flatpak update
 echo
 
+# Update pkg list
+
+echo ":: Updating PKG List..."
+$HOME/.config/scripts/settings/update-pkg-list.sh
+echo
+
 # Reload Waybar
 pkill -RTMIN+1 waybar
 

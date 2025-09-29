@@ -100,7 +100,7 @@
 
 
 	"custom/updates": {
-		"format": "   {}",
+		"format": "   {}  ",
 		"escape": true,
 		"return-type": "json",
 		"exec": "~/.config/scripts/waybar/updates.sh",
