@@ -1,4 +1,5 @@
 hyprshade
+neofetch
 paru
 paru-debug
 spotify
