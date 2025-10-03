@@ -1,7 +1,9 @@
+dotnet-sdk-8.0-bin
 hyprshade
 neofetch
 paru
 paru-debug
 spotify
 visual-studio-code-bin
+webcatalog-bin
 whatsapp-linux-desktop
