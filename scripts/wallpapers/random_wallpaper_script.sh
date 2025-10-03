@@ -6,10 +6,10 @@ WALL_DIR="$HOME/pictures/wallpapers"
 CURRENT=$(basename $(cat ~/.cache/swww/current 2>/dev/null))
 
 # Pick a random folder
-FOLDER=$(find "$WALL_DIR" -mindepth 1 -maxdepth 1 -type d | shuf -n 1)
+FOLDER=$(find -L "$WALL_DIR" -mindepth 1 -maxdepth 1 -type d | shuf -n 1)
 
 # Pick a random image file in that folder, excluding the current wallpaper
-FILE=$(find "$FOLDER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | grep -vF "$CURRENT" | shuf -n 1)
+FILE=$(find -L "$FOLDER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | grep -vF "$CURRENT" | shuf -n 1)
 
 # Fallback: if all files were filtered out, just pick any image
 if [[ -z "$FILE" ]]; then
