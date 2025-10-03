@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Canva
+Exec=chromium --app=https://www.canva.com --class=Canva
+Icon=canva
+Type=Application
+Categories=Graphics;WebApp;
+
