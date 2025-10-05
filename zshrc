@@ -25,3 +25,4 @@ prompt adam1
 
 # Keybinding
 bindkey -e
+

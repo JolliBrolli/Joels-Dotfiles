@@ -57,6 +57,7 @@ rofi
 sddm
 signal-desktop
 sof-firmware
+speedtest-cli
 spotify
 swww
 thunar
@@ -65,6 +66,7 @@ thunar-media-tags-plugin
 thunderbird
 timeshift
 ttf-jetbrains-mono-nerd
+tumbler
 unzip
 visual-studio-code-bin
 waybar
@@ -73,9 +75,11 @@ wf-recorder
 whatsapp-linux-desktop
 wine
 winetricks
+wlogout
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xorg-server
 xorg-xhost
+youtube
 zsh
 zsh-completions

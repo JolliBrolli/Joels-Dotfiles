@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Gmail
+Exec=chromium --profile-directory=Gmail --app=https://mail.google.com
+Icon=Gmail
+Type=Application
+Categories=Graphics;WebApp;
+

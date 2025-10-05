@@ -7,3 +7,5 @@ spotify
 visual-studio-code-bin
 webcatalog-bin
 whatsapp-linux-desktop
+wlogout
+youtube
