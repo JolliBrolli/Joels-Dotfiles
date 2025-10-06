@@ -1,4 +1,7 @@
 
+# Add user-specific executables to PATH (XDG standard)
+[[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
+
 # enable command completion
 autoload -Uz compinit
 compinit

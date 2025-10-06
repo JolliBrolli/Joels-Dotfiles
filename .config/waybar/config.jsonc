@@ -105,11 +105,11 @@
 		"format": "   {}  ",
 		"escape": true,
 		"return-type": "json",
-		"exec": "~/.config/scripts/waybar/updates.sh",
+		"exec": "~/.local/bin/updates.sh",
 		"interval": 1800,
 		"signal": 1,
 		"hide-empty-text": true,
-		"on-click": "~/.config/scripts/settings/install_updates_ui"
+		"on-click": "~/.local/bin/install_updates_ui"
 	},
 
 
@@ -161,7 +161,7 @@
 		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
 		"tooltip-format-disconnected": "Disconnected",
 		"max-length": 50,
-		"on-click": "~/.config/scripts/settings/network_manager_gui.sh"
+		"on-click": "~/.local/bin/network_manager_gui.sh"
 	},
 
 
@@ -218,13 +218,13 @@
 		"format-disabled": "",
 		"format-off": "",
 		"interval": 30,
-		"on-click": "sleep 0.1 && ~/.config/scripts/settings/bluetooth.sh",
+		"on-click": "sleep 0.1 && ~/.local/bin/bluetooth.sh",
 		"format-no-controller": ""
 		},
 
 
 	"clock": {
-		"on-click": "~/.config/scripts/apps/calendar_app.sh"
+		"on-click": "~/.local/bin/calendar_app.sh"
 	}
 //-----------------------------------------------------------------------
 
