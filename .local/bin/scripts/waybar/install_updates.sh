@@ -62,7 +62,7 @@ fi
 
 # Arch
 if [[ $(_checkCommandExists "pacman") == 0 ]]; then
-    aur_helper="$(cat ~/.config/scripts/settings/aur.sh)"
+    aur_helper="$(cat ~/.local/bin/aur.sh)"
     $aur_helper
 
 # Fedora
@@ -83,7 +83,7 @@ echo
 # Update pkg list
 
 echo ":: Updating PKG List..."
-$HOME/.config/scripts/settings/update-pkg-list.sh
+$HOME/.local/bin/update-pkg-list.sh
 echo
 
 # Reload Waybar

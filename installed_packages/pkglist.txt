@@ -19,6 +19,7 @@ flatpak
 flatpak-builder
 gimp
 git
+git-filter-repo
 github-cli
 gum
 gwenview
@@ -31,6 +32,7 @@ intel-media-driver
 intel-ucode
 kitty
 less
+lf
 libinput
 linux
 linux-firmware

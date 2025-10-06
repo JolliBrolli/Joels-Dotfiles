@@ -1,34 +1,33 @@
+@import "mocha.css";
+
 * {
-	border: none;
-	font-family:"Monaspace Radon Nerd Font";
-	font-size: 13px;
-	min-height: 0px;
+    border: none;
+    font-family:"Monaspace Neon Nerd Font";
+    font-size: 13px;
+    min-height: 0px;
+}
+
+.modules-left {
+    margin:8px 0px 8px 10px;
+}
+
+.modules-right {
+    margin:8px 10px 8px 0px;
+}
+
+.modules-center {
+    margin:8px 0px 8px 0px;
 }
 
 window#waybar {
-	background-color: rgba(0, 0, 0, 0.35);
-	color: white;
+    background-color: rgba(0, 0, 0, 0.15); 
 }
-
-/* Option 1: Simple vertical line separators with more spacing */
-
-.modules-left > widget:not(:last-child),
-.modules-center > widget:not(:last-child),
-.modules-right > widget:not(:last-child) {
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    margin-right: 12px;
-    padding-right: 12px;
-}
-
-
-
-/* Option 2: Alternative with pseudo-element separators (comment out Option 1 if using this) */
 /*
 .modules-left > widget + widget::before,
 .modules-center > widget + widget::before,
 .modules-right > widget + widget::before {
     content: "│";
-    color: rgba(255, 255, 255, 0.4);
+    color: @overlay1;
     margin-right: 8px;
     font-weight: normal;
 }
@@ -42,42 +41,83 @@ window#waybar {
 
 #window {
     font-weight: bold;
-    font-family: "ttf-jetbrains-mono-nerd";
+    font-family: "Monaspace Neon Nerd Font";
+    background-color: @surface0;
+    color: @text; 
+    padding: 0px 5px;
+    border-radius: 8px; 
+    margin: 0 10px; 
 }
+
+window#waybar.empty #window {  
+ background:none;  
+}
+
 
 #workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    color: white;
-    border-top: 2px solid transparent;
-}
-
-#workspaces button.focused {
-    color: #c9545d;
-    border-top: 2px solid #c9545d;
-}
-
-#clock, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #bluetooth  {
-    padding: 0 3px;
+    padding: 0 5px 0px 2px;
     margin: 0 2px;
+    background-color: @surface0; 
+    border-radius: 8px;
+    color: @text;
+}
+
+#workspaces button.active {
+	color: @lavender;	
+}
+
+#workspaces button:nth-child(1) { /* Kitty */
+	color: @mauve;
+}
+
+#workspaces button:nth-child(2) { /* Browser */
+	color: @rosewater;
+}
+
+#workspaces button:nth-child(3) { /* Code Editor */
+	color: @mint;
+}
+
+#workspaces button:nth-child(4) { /* Spotify */
+	color: @darkteal;
+}
+
+#workspaces button:nth-child(5) { /* Youtube */
+	color: @red;
+}
+
+
+#custom-updates {
+	color: @flamingo;
+}
+
+#custom-updates, #clock, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #bluetooth {
+    padding: 0 5px;
+    margin: 0 2px;
+    background-color: @surface0; 
+    border-radius: 8px;
 }
 
 #clock {
     font-weight: bold;
+    color: @peach; 
 }
 
 #battery {
+    color: @green; 
 }
 
 #battery icon {
-    color: red;
+    color: @red; 
 }
 
 #battery.charging {
+    background-color: @green;
+    color: @base;
 }
 
 #battery.warning:not(.charging) {
-    color: white;
+    color: @text; 
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -85,28 +125,48 @@ window#waybar {
     animation-direction: alternate;
 }
 
+#custom-system {
+	color: @yellow;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
 #cpu {
+    color: @tealaccent;
 }
 
 #memory {
+    color: @lavender;
+}
+
+#disk {
+    color: @lightmauve;
 }
 
 #network {
+    color: @blue;
 }
 
 #network.disconnected {
-    background: #f53c3c;
+    background: @red;
 }
 
 #pulseaudio {
+    color: @sky; 
 }
 
 #pulseaudio.muted {
+    color: @maroon; 
 }
+
+#bluetooth {
+    color: @sapphire; 
+}
+
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: black;
+        background-color: @text;
+        color: @base;
     }
 }

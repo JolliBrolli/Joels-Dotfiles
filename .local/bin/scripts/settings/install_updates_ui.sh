@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-exec kitty --class dotfiles-floating -e ~/.config/scripts/waybar/install_updates.sh
+exec kitty --class dotfiles-floating -e ~/.local/bin/install_updates.sh
