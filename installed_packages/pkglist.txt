@@ -21,6 +21,7 @@ gimp
 git
 git-filter-repo
 github-cli
+gitleaks
 gum
 gwenview
 hyprland
@@ -63,12 +64,14 @@ signal-desktop
 sof-firmware
 speedtest-cli
 spotify
+stow
 swww
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunderbird
 timeshift
+tree
 ttf-jetbrains-mono-nerd
 tumbler
 unzip
