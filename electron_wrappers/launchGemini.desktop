@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Gemini
+Exec=chromium --profile-directory=Gemini --app=https://gemini.google.com/app
+Icon=Gemini
+Type=Application
+Categories=Graphics;WebApp;

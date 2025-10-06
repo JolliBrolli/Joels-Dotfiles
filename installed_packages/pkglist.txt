@@ -6,6 +6,7 @@ bash-completion
 blueman
 bluez
 bluez-utils
+brightnessctl
 calcurse
 chromium
 discord
@@ -42,6 +43,7 @@ neofetch
 neovim
 networkmanager
 nodejs
+nordvpn-bin
 npm
 obsidian
 pacman-contrib
@@ -76,6 +78,7 @@ whatsapp-linux-desktop
 wine
 winetricks
 wlogout
+wlr-randr
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xorg-server

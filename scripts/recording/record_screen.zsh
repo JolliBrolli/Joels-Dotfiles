@@ -39,10 +39,12 @@ start_recording() {
     local mode="$1"
     local filename="$RECORDINGS_DIR/recording_${TIMESTAMP}.mp4"
     local cmd_args=()
-    
+ 
+# ... (inside start_recording function)
     case "$mode" in
         "fullscreen"|"full")
-            cmd_args=(-f "$filename")
+            # FIX: Explicitly specify monitor (-o eDP-1) and apply pixel format as a filter (-F "format=yuv420p")
+            cmd_args=(-o eDP-1 -F "format=yuv420p" -f "$filename") 
             notify-send "Recording Started" "Recording full screen" -i video-x-generic
             ;;
         "area"|"region")
@@ -52,11 +54,13 @@ start_recording() {
                 notify-send "Recording Cancelled" "No area selected" -i dialog-information
                 return 1
             fi
-            cmd_args=(-g "$geometry" -f "$filename")
+            # FIX: Apply pixel format as a filter (-F "format=yuv420p")
+            cmd_args=(-g "$geometry" -F "format=yuv420p" -f "$filename")
             notify-send "Recording Started" "Recording selected area" -i video-x-generic
             ;;
         "audio"|"with-audio")
-            cmd_args=(-a -f "$filename")
+            # FIX: Apply pixel format as a filter (-F "format=yuv420p")
+            cmd_args=(-a -F "format=yuv420p" -f "$filename")
             notify-send "Recording Started" "Recording full screen with audio" -i video-x-generic
             ;;
         "area-audio")
@@ -66,7 +70,8 @@ start_recording() {
                 notify-send "Recording Cancelled" "No area selected" -i dialog-information
                 return 1
             fi
-            cmd_args=(-a -g "$geometry" -f "$filename")
+            # FIX: Apply pixel format as a filter (-F "format=yuv420p")
+            cmd_args=(-a -g "$geometry" -F "format=yuv420p" -f "$filename")
             notify-send "Recording Started" "Recording selected area with audio" -i video-x-generic
             ;;
         *)
@@ -81,8 +86,17 @@ start_recording() {
             ;;
     esac
 
+    # Explicitly set encoder options for robustness
+    local encoder_args=(
+        "-c" "libx264"
+#        "-x" "yuv420p"
+        "-p" "crf=23"
+        "-p" "preset=ultrafast"
+        "-p" "tune=zerolatency"
+    )
     # Start recording in background
-    wf-recorder "${cmd_args[@]}" &
+    wf-recorder "${cmd_args[@]}" "${encoder_args[@]}" &
+    
     local pid=$!
     echo "$pid" > "$PIDFILE"
     

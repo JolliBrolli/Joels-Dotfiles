@@ -1,6 +1,7 @@
 dotnet-sdk-8.0-bin
 hyprshade
 neofetch
+nordvpn-bin
 paru
 paru-debug
 spotify
