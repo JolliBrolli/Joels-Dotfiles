@@ -1,32 +1,40 @@
 #!/bin/zsh
 
+# --- Configuration ---
 WALL_DIR="$HOME/pictures/wallpapers"
+CURRENT_CACHE="$HOME/.cache/swww/current"
 
+# --- Get Current Wallpaper ---
 # Get current wallpaper filename (not full path)
-CURRENT=$(basename $(cat ~/.cache/swww/current 2>/dev/null))
+CURRENT=$(basename $(cat "$CURRENT_CACHE" 2>/dev/null))
 
-# Pick a random folder
-FOLDER=$(find -L "$WALL_DIR" -mindepth 1 -maxdepth 1 -type d | shuf -n 1)
+# --- Find Random Wallpaper Recursively ---
+# Find ALL image files recursively from WALL_DIR, exclude the current one, and pick a random one.
+# Note: The -L option follows symlinks.
+IMAGE_FILES=$(find -L "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \))
 
-# Pick a random image file in that folder, excluding the current wallpaper
-FILE=$(find -L "$FOLDER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | grep -vF "$CURRENT" | shuf -n 1)
+# Exclude the current file
+FILE=$(echo "$IMAGE_FILES" | grep -vF "$CURRENT" | shuf -n 1)
 
-# Fallback: if all files were filtered out, just pick any image
+# Fallback: if all files were filtered out (meaning only one file exists), just pick any image
 if [[ -z "$FILE" ]]; then
-    FILE=$(find "$FOLDER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
+    FILE=$(echo "$IMAGE_FILES" | shuf -n 1)
 fi
 
-# Set the wallpaper with animation
+# --- Set Wallpaper ---
 if [[ -n "$FILE" ]]; then
+    # Set the wallpaper with animation
     swww img "$FILE" \
-      --transition-type grow \
-      --transition-duration 3 \
-      --transition-fps 120 \
-      --transition-pos 0.99,0.99 
-    echo "$FILE" > ~/.cache/swww/current
+        --transition-type grow \
+        --transition-duration 3 \
+        --transition-fps 120 \
+        --transition-pos 0.99,0.99 
+    
+    # Update the cache file
+    echo "$FILE" > "$CURRENT_CACHE"
+    
     echo "Wallpaper set: $FILE"
 
 else
-    echo "No wallpaper found to set!"
+    echo "No wallpaper found to set in $WALL_DIR!"
 fi
-

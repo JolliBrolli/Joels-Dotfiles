@@ -20,7 +20,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.15); 
+    background-color: rgba(0, 0, 0, 0.1); 
 }
 /*
 .modules-left > widget + widget::before,
@@ -92,7 +92,7 @@ window#waybar.empty #window {
 	color: @flamingo;
 }
 
-#custom-updates, #clock, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #bluetooth {
+#custom-updates, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #bluetooth {
     padding: 0 5px;
     margin: 0 2px;
     background-color: @surface0; 
@@ -100,6 +100,10 @@ window#waybar.empty #window {
 }
 
 #clock {
+    padding: 2px 5px 0px 5px;
+    margin: 0 2px;
+    background-color: @surface0; 
+    border-radius: 8px;
     font-weight: bold;
     color: @peach; 
 }
@@ -127,9 +131,11 @@ window#waybar.empty #window {
 }
 
 #custom-system {
-	color: @yellow;
+	color: @lavender;
     padding: 0 5px;
     margin: 0 2px;
+    background-color: @surface0; 
+    border-radius: 8px;
 }
 
 #cpu {
@@ -137,7 +143,7 @@ window#waybar.empty #window {
 }
 
 #memory {
-    color: @lavender;
+    color: @yellow;
 }
 
 #disk {
