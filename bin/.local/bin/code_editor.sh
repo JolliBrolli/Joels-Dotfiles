@@ -1,3 +1,3 @@
 #!/bin/zsh 
 
-code --disable-hardware-acceleration
+alacritty -e nvim

@@ -30,3 +30,4 @@ prompt adam1
 bindkey -e
 
 fastfetch
+export PATH="/usr/bin:$PATH"

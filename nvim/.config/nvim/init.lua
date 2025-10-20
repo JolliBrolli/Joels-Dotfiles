@@ -1,108 +1,40 @@
--- Bootstrap lazy.nvim if not installed
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.mapleader = " "
+
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
+
 vim.opt.rtp:prepend(lazypath)
 
+local lazy_config = require "configs.lazy"
 
--- init.lua
-
--- Set line numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
-
--- Transparency
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
--- Plugin manager: lazy.nvim
--- Make sure you have lazy installed: https://github.com/folke/lazy.nvim
+-- load plugins
 require("lazy").setup({
-  -- Theme
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
-        transparent_background = true,
-      })
-      vim.cmd.colorscheme("catppuccin-mocha")
-    end,
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
   },
 
-  -- Mason (LSP/DAP/Formatter installer)
-  {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
-    config = function()
-      require("mason").setup()
-    end,
-  },
+  { import = "plugins" },
+}, lazy_config)
 
-  -- LSP support
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "bashls", "cssls", "jsonls", "yamlls", "lua_ls" },
-      })
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
 
-      local lspconfig = require("lspconfig")
-      lspconfig.bashls.setup({})
-      lspconfig.cssls.setup({})
-      lspconfig.jsonls.setup({})
-      lspconfig.yamlls.setup({})
-      lspconfig.lua_ls.setup({})
-    end,
-  },
+require "options"
+require "autocmds"
 
-  -- Autocompletion
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "L3MON4D3/LuaSnip",
-      "rafamadriz/friendly-snippets",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    config = function()
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
+vim.schedule(function()
+  require "mappings"
+end)
 
-      require("luasnip.loaders.from_vscode").lazy_load()
-
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-          ["<Tab>"] = cmp.mapping.select_next_item(),
-          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-      })
-    end,
-  },
-})
-
+-- *** FIX APPLIED: The neotest.setup call was removed from here. ***
+-- It is now correctly placed inside the 'config' function of the neotest plugin spec.
