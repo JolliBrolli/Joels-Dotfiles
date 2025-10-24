@@ -1,5 +1,7 @@
+alacritty
 archiso
 archlinux-xdg-menu
+ascii-image-converter
 aspnet-runtime
 base
 base-devel
@@ -36,6 +38,7 @@ hyprshot
 ifuse
 intel-media-driver
 intel-ucode
+jp2a
 kitty
 less
 lf
@@ -62,12 +65,14 @@ pipewire
 pipewire-alsa
 pipewire-pulse
 polkit-gnome
+qt5-quickcontrols2
 reflector
 rofi
 sddm
 sof-firmware
 speedtest-cli
 spotify
+starship
 stow
 swww
 thunar

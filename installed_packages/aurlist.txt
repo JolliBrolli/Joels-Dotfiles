@@ -1,3 +1,4 @@
+ascii-image-converter
 dotnet-sdk-8.0-bin
 hyprshade
 neofetch

@@ -79,12 +79,13 @@ window#waybar.empty #window {
 	color: @mint;
 }
 
-#workspaces button:nth-child(4) { /* Spotify */
-	color: @darkteal;
+#workspaces button:nth-child(4) { /* Youtube */
+
+	color: @red;
 }
 
-#workspaces button:nth-child(5) { /* Youtube */
-	color: @red;
+#workspaces button:nth-child(5) { /* Spotify */ 
+	color: @darkteal;
 }
 
 

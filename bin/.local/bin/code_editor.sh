@@ -1,3 +1,3 @@
 #!/bin/zsh 
 
-alacritty -e nvim
+alacritty --class "code-editor" -e nvim 
