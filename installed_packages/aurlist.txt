@@ -1,5 +1,6 @@
 ascii-image-converter
 dotnet-sdk-8.0-bin
+github-desktop-bin
 hyprshade
 neofetch
 nordvpn-bin

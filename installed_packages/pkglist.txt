@@ -18,6 +18,7 @@ dotnet-runtime
 dotnet-sdk
 dotnet-sdk-8.0-bin
 fastfetch
+fd
 figlet
 firefox
 flatpak
@@ -27,6 +28,7 @@ gimp
 git
 git-filter-repo
 github-cli
+github-desktop-bin
 gitleaks
 gum
 gwenview
@@ -46,6 +48,7 @@ libinput
 linux
 linux-firmware
 linux-headers
+luarocks
 mako
 mesa
 mpv
@@ -80,6 +83,7 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunderbird
 timeshift
+tmux
 tree
 ttf-jetbrains-mono-nerd
 tumbler
@@ -87,6 +91,7 @@ unzip
 visual-studio-code-bin
 waybar
 wf-recorder
+wget
 whatsapp-linux-desktop
 wine
 winetricks

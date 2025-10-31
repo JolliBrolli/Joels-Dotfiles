@@ -45,16 +45,11 @@ normal            = { family = "Monaspace Neon NF", style = "Regular" }
 size              = 11.25  # Or whatever size you prefer
 
 # Adjust the vertical offset (y)
-offset            = { x = 0, y = 0 } # Start by shifting UP 1 pixel
+offset            = { x = 0, y = 0 } 
 
-glyph_offset      = { x = 0, y = 2 } # Leave this alone for now
+glyph_offset      = { x = 0, y = 2 }
 
 
-#[bell]
-#animation             = "EaseOutExpo"
-#duration              = 0
-#color                 = "#C0C5CE"
-#command               = { program = "notify-send", args = ["alacritty", "bell",] }
 
 [selection]
 #semantic_escape_chars = ",│‘|:"' ()[]{}<>t"
@@ -86,16 +81,6 @@ bindings = [
 [hints]
 #alphabet              = "jfkdls;ahgurieowpq"
 
-#[[hints.enabled]]
-#command               = "xdg-open"
-## command             = "open" # On macOS
-## command             = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
-#hyperlinks            = true
-#post_processing       = true
-#persist               = false
-#mouse.enabled         = true
-#binding               = { key = "U", mods = "Control|Shift" }
-#regex                 = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
 
 [keyboard]
 bindings = [
