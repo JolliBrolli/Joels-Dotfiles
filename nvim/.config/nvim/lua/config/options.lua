@@ -1,8 +1,17 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- indenting 2 spaces instead of 4
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
+-- set no foldable lines
+vim.opt.foldenable = false
 -- Make line numbers default
 vim.o.number = true
+-- Make columns no more than 80 characters long
+vim.opt.colorcolumn = "80"
 -- You can also add relative line numbers, to help with jumping.
 vim.o.relativenumber = true
 

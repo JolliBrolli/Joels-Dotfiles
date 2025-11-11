@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-exec alacritty --class dotfiles-floating -e ~/.local/bin/install_updates.sh
+exec ghostty --class=com.dotfiles-floating -e ~/.local/bin/install_updates.sh

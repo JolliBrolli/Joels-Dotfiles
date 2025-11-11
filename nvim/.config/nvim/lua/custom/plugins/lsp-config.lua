@@ -19,6 +19,7 @@ return {
 					"lua_ls",
 					"html",
 					"cssls",
+					"clangd",
 					"ts_ls",
 					"jsonls",
 					"yamlls",
@@ -113,4 +114,5 @@ return {
 			vim.lsp.config("roslyn", {})
 		end,
 	},
+
 }

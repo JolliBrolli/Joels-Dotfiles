@@ -3,7 +3,9 @@
 
     "logo": {
         "type": "file", 
+//        "type": "kitty-icat",
         "source":"~/.config/fastfetch/catpuccin-logo.txt",
+//        "source": "~/.config/fastfetch/jk-webs-logo-no-slogan.png",
         "height": 7,
         "width": 15,
         "padding": {

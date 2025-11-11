@@ -1,28 +1,29 @@
 @import "mocha.css";
 
 * {
-    border: none;
-    font-family:"Monaspace Neon NF";
-    font-size: 13px;
-    min-height: 0px;
+  border: none;
+  font-family: "JetBrainsMonoNerdFont";
+  font-size: 13px;
+  min-height: 0px;
 }
 
 .modules-left {
-    margin:8px 0px 8px 10px;
+  margin: 8px 0px 8px 10px;
 }
 
 .modules-right {
-    margin:8px 10px 8px 0px;
+  margin: 8px 10px 8px 0px;
 }
 
 .modules-center {
-    margin:8px 0px 8px 0px;
+  margin: 8px 0px 8px 0px;
 }
 
 window#waybar {
-/*    background-color: rgba(0, 0, 0, 0.1);  */
-    background-color: rgba(0, 0, 0, 0); 
+  /*    background-color: rgba(0, 0, 0, 0.1);  */
+  background-color: rgba(0, 0, 0, 0);
 }
+
 /*
 .modules-left > widget + widget::before,
 .modules-center > widget + widget::before,
@@ -41,134 +42,152 @@ window#waybar {
 */
 
 #window {
-    font-weight: bold;
-    font-family: "Monaspace Neon Nerd Font";
-    background-color: @surface0;
-    color: @text; 
-    padding: 0px 5px;
-    border-radius: 8px; 
-    margin: 0 10px; 
+  font-weight: bold;
+  font-family: "Monaspace Neon Nerd Font";
+  background-color: @surface0;
+  color: @text;
+  padding: 0px 5px;
+  border-radius: 8px;
+  margin: 0 10px;
 }
 
-window#waybar.empty #window {  
- background:none;  
+window#waybar.empty #window {
+  background: none;
 }
 
 
 #workspaces button {
-    padding: 0px 5px;
-    margin: 0 2px;
-    background-color: @surface0; 
-    border-radius: 8px;
-    color: @text;
+  padding: 0px 5px 0px 0px;
+  margin: 0 2px;
+  background-color: @surface0;
+  border-radius: 8px;
+  color: @text;
 }
 
 #workspaces button.active {
-	background-color: @surface1;	
+  background-color: @surface1;
 }
 
-#workspaces button:nth-child(1) { /* Kitty */
-
-	color: @mauve;
+#workspaces button:nth-child(1) {
+  /* Terminal */
+  padding: 0px 5px 0px 3px;
+  /* ⬅️ ADD THIS LINE */
+  color: @mauve;
 }
 
-#workspaces button:nth-child(2) { /* Browser */
-	color: @rosewater;
+#workspaces button:nth-child(2) {
+  /* Browser */
+  padding: 0px 5px 0px 1px;
+  color: @rosewater;
 }
 
-#workspaces button:nth-child(3) { /* Code Editor */
-	color: @mint;
+#workspaces button:nth-child(3) {
+  /* Code Editor */
+  padding: 0px 5px 0px 2px;
+  color: @mint;
 }
 
-#workspaces button:nth-child(4) { /* Youtube */
+#workspaces button:nth-child(4) {
+  /* Youtube */
 
-	color: @red;
+  color: @red;
 }
 
-#workspaces button:nth-child(5) { /* Spotify */ 
-	color: @darkteal;
+#workspaces button:nth-child(5) {
+  /* Spotify */
+  padding: 0px 5px 0px 1px;
+  color: @darkteal;
 }
 
 
 #custom-updates {
-	color: @flamingo;
-	font-weight: bold;
+  color: @flamingo;
+  font-weight: bold;
 }
 
-#custom-updates, #custom-system, #clock, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #bluetooth {
-    padding: 0 5px;
-    margin: 0 2px;
-    background-color: @surface0; 
-    border-radius: 8px;
+#custom-updates,
+#custom-system,
+#clock,
+#battery,
+#cpu,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#bluetooth {
+  padding: 0 5px;
+  margin: 0 2px;
+  background-color: @surface0;
+  border-radius: 8px;
 }
 
 #clock {
-    font-weight: bold;
-    color: @peach; 
+  font-weight: bold;
+  color: @peach;
 }
 
 #battery {
-    color: @green; 
+  color: @green;
 }
 
 #battery icon {
-    color: @red; 
+  color: @red;
 }
 
 #battery.charging {
-    background-color: @green;
-    color: @base;
+  background-color: @green;
+  color: @base;
 }
 
 #battery.warning:not(.charging) {
-    color: @text; 
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: @text;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #custom-system {
-	color: @lavender;
+  color: @lavender;
 }
 
 #cpu {
-    color: @tealaccent;
+  color: @tealaccent;
 }
 
 #memory {
-    color: @yellow;
+  color: @yellow;
 }
 
 #disk {
-    color: @lightmauve;
+  color: @lightmauve;
 }
 
 #network {
-    color: @blue;
+  color: @blue;
 }
 
 #network.disconnected {
-    background: @red;
+  background: @red;
 }
 
 #pulseaudio {
-    color: @sky; 
+  color: @sky;
 }
 
 #pulseaudio.muted {
-    color: @maroon; 
+  color: @maroon;
 }
 
 #bluetooth {
-    color: @sapphire; 
+  color: @sapphire;
 }
 
 
 @keyframes blink {
-    to {
-        background-color: @text;
-        color: @base;
-    }
+  to {
+    background-color: @text;
+    color: @base;
+  }
 }

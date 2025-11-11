@@ -40,6 +40,10 @@ return {
 				b.diagnostics.tidy,
 				b.formatting.tidy,
 
+				-- C and C++
+				b.diagnostics.cppcheck,
+				b.formatting.clangformat,
+
 				-- LUA (LINTING)
 				-- Luacheck is the standard linter for Lua.
 				b.diagnostics.luacheck,

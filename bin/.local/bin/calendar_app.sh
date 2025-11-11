@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-alacritty --class dotfiles-floating -e calcurse
+ghostty --class=com.dotfiles-floating -e calcurse
