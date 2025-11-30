@@ -11,6 +11,7 @@ return {
 			})
 		end,
 	},
+
 	{
 		"mason-org/mason-lspconfig.nvim",
 		config = function()
@@ -24,6 +25,7 @@ return {
 					"jsonls",
 					"yamlls",
 					"lemminx",
+					"rust_analyzer",
 				},
 
 				handlers = {
@@ -39,6 +41,29 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
+	},
+
+	{
+		"mrcjkb/rustaceanvim",
+		-- ... other settings ...
+		config = function()
+			vim.g.rustaceanvim = {
+				-- Plugin configuration
+				tools = {},
+				-- LSP configuration
+				server = {
+					on_attach = function(client, bufnr)
+						-- you can also put keymaps in here
+					end,
+					default_settings = {
+						-- rust-analyzer language server configuration
+						["rust-analyzer"] = {},
+					},
+				},
+				-- DAP configuration
+				dap = {},
+			}
+		end,
 	},
 
 	{
@@ -114,5 +139,4 @@ return {
 			vim.lsp.config("roslyn", {})
 		end,
 	},
-
 }

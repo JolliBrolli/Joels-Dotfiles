@@ -6,8 +6,8 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
--- set no foldable lines
-vim.opt.foldenable = false
+-- set no wrap lines
+vim.opt.wrap = false
 -- Make line numbers default
 vim.o.number = true
 -- Make columns no more than 80 characters long

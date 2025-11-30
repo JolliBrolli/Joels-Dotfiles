@@ -88,6 +88,7 @@ function file_finder_script() {
 zle -N file_finder_script
 bindkey '^F' file_finder_script
 
+
 # Run fastfetch only on the first terminal instance in a session.
 # This check prevents it from running in new splits/tabs that inherit
 # the environment variable.
@@ -95,5 +96,3 @@ if [[ -z "$ZSH_INITIAL_RUN" ]]; then
     export ZSH_INITIAL_RUN="true"
     fastfetch
 fi
-
-

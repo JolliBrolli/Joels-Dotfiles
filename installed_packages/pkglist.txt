@@ -3,6 +3,7 @@ archiso
 archlinux-xdg-menu
 ascii-image-converter
 aspnet-runtime
+asusctl
 base
 base-devel
 bash-completion
@@ -16,6 +17,7 @@ cameractrls
 catppuccin-cursors-mocha
 chromium
 cppcheck
+cups
 discord
 dotnet-runtime
 dotnet-sdk
@@ -87,6 +89,7 @@ starship
 steam
 stow
 swww
+system-config-printer
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
@@ -98,7 +101,6 @@ tree
 ttf-jetbrains-mono-nerd
 tumbler
 unzip
-visual-studio-code-bin
 waybar
 wf-recorder
 wget

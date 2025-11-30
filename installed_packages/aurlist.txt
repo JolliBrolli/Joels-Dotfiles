@@ -1,4 +1,5 @@
 ascii-image-converter
+asusctl
 catppuccin-cursors-mocha
 dotnet-sdk-8.0-bin
 github-desktop-bin
@@ -11,7 +12,6 @@ paru
 paru-debug
 pinta
 spotify
-visual-studio-code-bin
 whatsapp-linux-desktop
 wlogout
 youtube
