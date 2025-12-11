@@ -27,6 +27,7 @@ vim.keymap.set("n", "<C-j>", ":cnext<CR>", { desc = "Next diagnostic error" })
 vim.keymap.set("n", "<C-k>", ":cprev<CR>", { desc = "Previous diagnostic error" })
 vim.keymap.set("n", "<leader>ln", ":set number!<CR>", { desc = "[L]ine [N]umbers" })
 vim.keymap.set("n", "<leader>lrn", ":set relativenumber!<CR>", { desc = "[R]elative [L]ine [N]umbers" })
+vim.keymap.set('n', ';', ':')
 -- Corrected Custom function to close utility/plugin windows
 local function close_utility_windows()
 	-- Get the list of windows and iterate in REVERSE order for safe closing
@@ -86,7 +87,7 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, {}, { desc = "Go to Defintion"
 vim.keymap.set("n", "<S-K>", vim.lsp.buf.hover, {}, { desc = "Get Description" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {}, { desc = "Go to Code Actions" })
 -- Formatting Keyinds
-vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+vim.keymap.set("n", "gf", vim.lsp.buf.format, {})
 -- Telescope keybinds
 -- NOTE: We must require "telescope.builtin" here to use the 'builtin' variable
 local builtin = require("telescope.builtin")

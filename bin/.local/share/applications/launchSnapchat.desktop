@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Snapchat
-Exec=chromium --app=https://web.snapchat.com --class=Snapchat
-Icon=Snapchat
-Type=Application
-Categories=Graphics;WebApp;

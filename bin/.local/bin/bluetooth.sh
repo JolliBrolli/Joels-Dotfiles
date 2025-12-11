@@ -1,2 +1,2 @@
 #!/bin/zsh
-blueman-manager
+blueberry

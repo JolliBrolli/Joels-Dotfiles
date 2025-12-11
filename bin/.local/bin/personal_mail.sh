@@ -1,3 +1,3 @@
 #/bin/env zsh
 
-chromium --profile-directory="Profile 2" --app=http://mail.google.com
+google-chrome-stable --profile-directory="Default" --app=http://mail.google.com

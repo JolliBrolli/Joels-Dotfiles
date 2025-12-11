@@ -10,7 +10,7 @@ return {
 				flavour = "mocha",
 
 				-- If set to true, the background color will not be set, allowing terminal transparency to show.
-				transparent_background = false,
+				transparent_background = true,
 
 				-- Style overrides (e.g., forcing no italics on comments)
 				styles = {

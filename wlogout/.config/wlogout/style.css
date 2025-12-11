@@ -27,25 +27,25 @@ button:focus, button:active, button:hover {
 }
 
 #lock {
-    background-image: url("/home/Joel/.config/wlogout/icons/mocha/lavender/lock.svg");
+    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/lock.svg");
 }
 
 #logout {
-    background-image: url("/home/Joel/.config/wlogout/icons/mocha/lavender/logout.svg");
+    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/logout.svg");
 }
 
 #suspend {
-    background-image: url("/home/Joel/.config/wlogout/icons/mocha/lavender/suspend.svg");
+    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/suspend.svg");
 }
 
 #hibernate {
-    background-image: url("/home/Joel/.config/wlogout/icons/mocha/lavender/hibernate.svg");
+    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/hibernate.svg");
 }
 
 #shutdown {
-    background-image: url("/home/Joel/.config/wlogout/icons/mocha/lavender/shutdown.svg");
+    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/shutdown.svg");
 }
 
 #reboot {
-    background-image: url("/home/Joel/.config/wlogout/icons/mocha/lavender/reboot.svg");
+    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/reboot.svg");
 }

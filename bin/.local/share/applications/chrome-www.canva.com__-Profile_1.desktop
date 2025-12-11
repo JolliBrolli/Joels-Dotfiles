@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Canva
+Exec=google-chrome-stable --app=https://www.canva.com --profile-directory="Profile 1"
+Icon=/home/joel/.local/share/applications/canva_icon.png
+Type=Application
+Categories=Graphics;WebApp;
+

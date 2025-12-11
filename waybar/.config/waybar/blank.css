@@ -1,0 +1,108 @@
+.modules-left {
+}
+
+.modules-right {
+}
+
+.modules-center {
+}
+
+window#waybar {
+}
+
+#window {
+}
+
+window#waybar.empty #window {
+}
+
+
+#workspaces button {
+}
+
+#workspaces button.active {
+}
+
+#workspaces button:nth-child(1) {
+  /* Terminal */
+}
+
+#workspaces button:nth-child(2) {
+  /* Browser */
+}
+
+#workspaces button:nth-child(3) {
+  /* Code Editor */
+}
+
+#workspaces button:nth-child(4) {
+  /* Youtube */
+}
+
+#workspaces button:nth-child(5) {
+  /* Spotify */
+}
+
+
+#custom-updates {
+}
+
+#custom-updates,
+#custom-system,
+#clock,
+#battery,
+#cpu,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#bluetooth {
+}
+
+#clock {
+}
+
+#battery {
+}
+
+#battery icon {
+}
+
+#battery.charging {
+}
+
+#battery.warning:not(.charging) {
+}
+
+#custom-system {
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#disk {
+}
+
+#network {
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#bluetooth {
+}
+
+
+@keyframes blink {
+  to {
+  }
+}

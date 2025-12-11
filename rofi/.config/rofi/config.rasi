@@ -17,4 +17,4 @@ timeout {
 }
 
 
-@theme "/home/Joel/.config/rofi/catpuccin-default.rasi"
+@theme "/home/joel/.config/rofi/catpuccin-default.rasi"

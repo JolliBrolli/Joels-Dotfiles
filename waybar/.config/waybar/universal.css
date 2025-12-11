@@ -1,0 +1,167 @@
+* {
+  border: none;
+  font-family: "JetBrainsMonoNerdFont";
+  font-size: 13px;
+  min-height: 0px;
+}
+
+.modules-left {
+  margin: 8px 0px 8px 10px;
+}
+
+.modules-right {
+  margin: 8px 10px 8px 0px;
+}
+
+.modules-center {
+  margin: 8px 0px 8px 0px;
+}
+
+window#waybar {
+  /*    background-color: rgba(0, 0, 0, 0.1);  */
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*
+.modules-left > widget + widget::before,
+.modules-center > widget + widget::before,
+.modules-right > widget + widget::before {
+    content: "│";
+    color: @overlay1;
+    margin-right: 8px;
+    font-weight: normal;
+}
+
+.modules-left > widget + widget,
+.modules-center > widget + widget,
+.modules-right > widget + widget {
+    margin-left: 8px;
+}
+*/
+
+#window {
+  font-weight: bold;
+  font-family: "JetBrainsMonoNerdFont";
+  padding: 0px 5px;
+  border-radius: 8px;
+  margin: 0 10px;
+}
+
+window#waybar.empty #window {
+  background: none;
+}
+
+
+#workspaces button {
+  padding: 0px 5px 0px 0px;
+  margin: 0 2px;
+  border-radius: 8px;
+}
+
+#workspaces button.active {
+}
+
+#workspaces button:nth-child(1) {
+  /* Terminal */
+  padding: 0px 5px 0px 3px;
+}
+
+#workspaces button:nth-child(2) {
+  /* Browser */
+  padding: 0px 5px 0px 1px;
+}
+
+#workspaces button:nth-child(3) {
+  /* Code Editor */
+  padding: 0px 5px 0px 2px;
+}
+
+#workspaces button:nth-child(4) {
+  /* Youtube */
+}
+
+#workspaces button:nth-child(5) {
+  /* Spotify */
+  padding: 0px 5px 0px 1px;
+}
+
+
+#custom-updates {
+  font-weight: bold;
+}
+
+#custom-updates,
+#custom-system,
+#custom-settings,
+#custom-power-profile,
+#clock,
+#battery,
+#cpu,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#bluetooth {
+  padding: 0 5px;
+  margin: 0 2px;
+  border-radius: 8px;
+}
+
+#custom-power-profile {
+  padding: 0 5 0 5px;
+}
+#clock {
+  font-weight: bold;
+}
+
+#battery {
+}
+
+#battery icon {
+}
+
+#battery.charging {
+}
+
+#battery.warning:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#custom-system {
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#disk {
+}
+#custom-settings {
+  padding: 0 5 0 3px;
+}
+#network {
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#bluetooth {
+}
+
+
+@keyframes blink {
+  to {
+  }
+}

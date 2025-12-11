@@ -1,1 +1,1 @@
-nl.hjdskes.gcolor3
+dev.vencord.Vesktop

@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-gtk-launch launchCanva
+gtk-launch chrome-www.canva.com__-Profile_1.desktop

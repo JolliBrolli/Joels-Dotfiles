@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-gtk-launch launchSnapchat
+gtk-launch chrome-web.snapchat.com__-Default.desktop

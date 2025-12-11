@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Rooftops & Alleys: The Parkour Game
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/2703850
+Icon=steam_icon_2703850
+Terminal=false
+Type=Application
+Categories=Game;

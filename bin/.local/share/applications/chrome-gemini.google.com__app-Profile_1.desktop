@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Gemini
+Exec=google-chrome-stable --app=https://gemini.google.com/app --profile-directory="Profile 1"
+Icon=/home/joel/.local/share/applications/gemini_icon.png
+Type=Application
+Categories=Graphics;WebApp;

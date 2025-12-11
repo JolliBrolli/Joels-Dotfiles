@@ -1,0 +1,145 @@
+@import "catppuccin_theme/mocha.css";
+@import "universal.css";
+
+* {
+}
+
+.modules-left {
+}
+
+.modules-right {
+}
+
+.modules-center {
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#window {
+  background-color: @surface0;
+  color: @text;
+}
+
+window#waybar.empty #window {
+  background: none;
+}
+
+
+#workspaces button {
+  background-color: @surface0;
+  color: @text;
+}
+
+#workspaces button.active {
+  background-color: @surface1;
+}
+
+#workspaces button:nth-child(1) {
+  /* Terminal */
+  color: @mauve;
+}
+
+#workspaces button:nth-child(2) {
+  /* Browser */
+  color: @rosewater;
+}
+
+#workspaces button:nth-child(3) {
+  /* Code Editor */
+  color: @mint;
+}
+
+#workspaces button:nth-child(4) {
+  /* Youtube */
+  color: @red;
+}
+
+#workspaces button:nth-child(5) {
+  /* Spotify */
+  color: @darkteal;
+}
+
+
+#custom-updates {
+  color: @flamingo;
+}
+
+#custom-updates,
+#custom-system,
+#clock,
+#battery,
+#cpu,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#bluetooth {
+  background-color: @surface0;
+}
+
+#clock {
+  color: @peach;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery icon {
+  color: @red;
+}
+
+#battery.charging {
+  background-color: @green;
+  color: @base;
+}
+
+#battery.warning:not(.charging) {
+  color: @text;
+}
+
+#custom-system {
+  color: @lavender;
+}
+
+#cpu {
+  color: @tealaccent;
+}
+
+#memory {
+  color: @yellow;
+}
+
+#disk {
+  color: @lightmauve;
+}
+
+#network {
+  color: @blue;
+}
+
+#network.disconnected {
+  background: @red;
+}
+
+#pulseaudio {
+  color: @sky;
+}
+
+#pulseaudio.muted {
+  color: @maroon;
+}
+
+#bluetooth {
+  color: @sapphire;
+}
+
+
+@keyframes blink {
+  to {
+    background-color: @text;
+    color: @base;
+  }
+}

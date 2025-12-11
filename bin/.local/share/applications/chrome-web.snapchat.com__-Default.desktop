@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Snapchat
+Exec=google-chrome-stable --app=https://web.snapchat.com --class=Snapchat --profile-directory="Default"
+Icon=/home/joel/.local/share/applications/snapchat_icon.png
+Type=Application
+Categories=Graphics;WebApp;

@@ -24,6 +24,7 @@
     "bluetooth",
     "network",
     "battery",
+    "group/QuickSettings",
     "group/hardware",
     "clock"
   ],
@@ -78,6 +79,34 @@
     "signal": 1,
     "hide-empty-text": true,
     "on-click": "~/.local/bin/install_updates_ui.sh"
+  },
+  // Quick Settings
+  "custom/settings": {
+    "format": "󰍜",
+    "tooltip": false
+  },
+  // Performance Profile
+  "custom/power-profile": {
+    "format": "{}",
+    "exec-if": "command -v asusctl",
+    "return-type": "json",
+    "exec": "~/.local/bin/get_asus_power_profile.sh",
+    "on-click": "~/.local/bin/toggle_asus_power_profiles.sh",
+    "return-type": "json",
+    "interval": 5,
+    "signal": 2
+  },
+  "group/QuickSettings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/settings",
+      "custom/power-profile"
+    ]
   },
   // System
   "custom/system": {

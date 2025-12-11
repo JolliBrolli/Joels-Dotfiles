@@ -1,7 +1,7 @@
-
 # Add user-specific executables to PATH (XDG standard)
 [[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
-
+# Add Cargo's binary directory to PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 # enable command completion
 autoload -Uz compinit
 compinit
@@ -49,7 +49,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden \
   --exclude build/'
 # Optionally, use a more relaxed search for directories for alt-c (cd)
 export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
-# Exclude common, unwanted directory names
+# Exclude common, unwanted directoru names
 export FZF_DEFAULT_OPTS='--walker-skip=.git,node_modules,target,build,logs,timeshift,.cache,.snapshots'
 
 function file_finder_script() {
@@ -87,7 +87,6 @@ function file_finder_script() {
 
 zle -N file_finder_script
 bindkey '^F' file_finder_script
-
 
 # Run fastfetch only on the first terminal instance in a session.
 # This check prevents it from running in new splits/tabs that inherit
