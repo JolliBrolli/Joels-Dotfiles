@@ -27,7 +27,8 @@ vim.keymap.set("n", "<C-j>", ":cnext<CR>", { desc = "Next diagnostic error" })
 vim.keymap.set("n", "<C-k>", ":cprev<CR>", { desc = "Previous diagnostic error" })
 vim.keymap.set("n", "<leader>ln", ":set number!<CR>", { desc = "[L]ine [N]umbers" })
 vim.keymap.set("n", "<leader>lrn", ":set relativenumber!<CR>", { desc = "[R]elative [L]ine [N]umbers" })
-vim.keymap.set('n', ';', ':')
+vim.keymap.set('n', 'Y', 'yy')
+vim.keymap.set('n', "<leader>y", '"+y', { desc = "[Y]ank to clipboard"})
 -- Corrected Custom function to close utility/plugin windows
 local function close_utility_windows()
 	-- Get the list of windows and iterate in REVERSE order for safe closing

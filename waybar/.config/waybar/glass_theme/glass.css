@@ -1,3 +1,4 @@
+
 @define-color backgroundlight rgba(150, 150, 150, 0.1);
 @define-color backgrounddark rgba(150, 150, 150, 0.1);
 @define-color workspacesbackground1 rgba(150, 150, 150, 0.1);
@@ -11,10 +12,9 @@
 
 
 @import 'universal.css';
-
+@import "catppuccin_theme/mocha.css";
 
 * {
-  color: rgba(255, 255, 255, 1);
    }
 
 .modules-left {}
@@ -26,7 +26,7 @@
 window#waybar {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0);
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
-
+  color: rgba(255, 255, 255, 1);
 }
 
 #window {
@@ -53,22 +53,27 @@ window#waybar.empty #window {
 
 #workspaces button:nth-child(1) {
   /* Terminal */
+  color: @mauve;
 }
 
 #workspaces button:nth-child(2) {
   /* Browser */
+  color: @rosewater;
 }
 
 #workspaces button:nth-child(3) {
   /* Code Editor */
+  color: @mint;
 }
 
 #workspaces button:nth-child(4) {
   /* Youtube */
+  color: @red;
 }
 
 #workspaces button:nth-child(5) {
   /* Spotify */
+  color: @darkteal;
 }
 
 

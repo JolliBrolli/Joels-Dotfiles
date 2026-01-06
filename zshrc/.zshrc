@@ -3,8 +3,8 @@
 # Add Cargo's binary directory to PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 # enable command completion
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # History settings
 HISTSIZE=50000

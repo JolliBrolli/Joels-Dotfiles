@@ -1,3 +1,4 @@
 #!/bin/zsh
 
-google-chrome-stable --profile-directory=Default --enable-features=TouchpadOverscrollHistoryNavigation --ozone-platform=wayland
+#google-chrome-stable --profile-directory=Default --enable-features=TouchpadOverscrollHistoryNavigation --ozone-platform=wayland
+zen-browser

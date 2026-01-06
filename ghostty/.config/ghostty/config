@@ -40,3 +40,4 @@ cursor-color = #94e2d5
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
+

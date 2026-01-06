@@ -85,6 +85,10 @@ window#waybar.empty #window {
   padding: 0px 5px 0px 1px;
 }
 
+#custom-arch {
+  color: cyan;
+  font-size: 15;
+}
 
 #custom-updates {
   font-weight: bold;
@@ -93,6 +97,7 @@ window#waybar.empty #window {
 #custom-updates,
 #custom-system,
 #custom-settings,
+#custom-arch,
 #custom-power-profile,
 #clock,
 #battery,

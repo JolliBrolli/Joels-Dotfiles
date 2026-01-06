@@ -1,6 +1,7 @@
 ascii-image-converter
 asusctl
 bauh
+blueberry
 catppuccin-cursors-mocha
 github-desktop-bin
 google-chrome
@@ -14,4 +15,8 @@ supergfxctl
 waypaper
 whatsapp-linux-desktop
 wlogout
+xwaylandvideobridge
+xwaylandvideobridge-debug
+yay
 youtube
+zen-browser-bin
