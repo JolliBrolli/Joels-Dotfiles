@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "systemctl sleep",
     "text" : "Sleep",
     "keybind" : "u"
 }
