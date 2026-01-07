@@ -26,6 +26,7 @@ return {
           "yamlls",
           "lemminx",
           "rust_analyzer",
+          "qmlls",
         },
 
         handlers = {

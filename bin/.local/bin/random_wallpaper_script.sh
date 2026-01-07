@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # --- Configuration ---
-WALL_DIR="$HOME/pictures/wallpapers"
+WALL_DIR="$HOME/Pictures/Wallpapers"
 CURRENT_CACHE="$HOME/.cache/swww/current"
 
 # --- Get Current Wallpaper ---
