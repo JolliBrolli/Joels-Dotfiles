@@ -29,6 +29,7 @@ vim.keymap.set("n", "<leader>ln", ":set number!<CR>", { desc = "[L]ine [N]umbers
 vim.keymap.set("n", "<leader>lrn", ":set relativenumber!<CR>", { desc = "[R]elative [L]ine [N]umbers" })
 vim.keymap.set('n', 'Y', 'yy')
 vim.keymap.set('n', "<leader>y", '"+y', { desc = "[Y]ank to clipboard"})
+vim.keymap.set('v', "<leader>y", '"+y', { desc = "[Y]ank to clipboard"})
 -- Corrected Custom function to close utility/plugin windows
 local function close_utility_windows()
 	-- Get the list of windows and iterate in REVERSE order for safe closing
@@ -180,3 +181,8 @@ vim.keymap.set("n", "<Leader>cb", ":CMakeBuild<CR>", { desc = "[C]Make[B]uild" }
 vim.keymap.set("n", "<Leader>cr", ":CMakeRun<CR>", { desc = "[C]Make[R]un" })
 -- Keymap to close the current window/split (e.g., terminal output from CMake)
 vim.keymap.set("n", "<Leader>ct", ":CMakeRunTest<CR><C-w>j", { desc = "[C]MakeRun[T]est" })
+
+
+
+
+

@@ -10,8 +10,10 @@ nordvpn-bin
 paru
 paru-debug
 pinta
+quickshell-git
 spotify
 supergfxctl
+wallust
 waypaper
 whatsapp-linux-desktop
 wlogout

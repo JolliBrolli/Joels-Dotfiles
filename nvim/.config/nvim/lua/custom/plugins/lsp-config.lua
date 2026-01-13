@@ -1,4 +1,4 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 return {
   {
     "mason-org/mason.nvim",
@@ -28,12 +28,26 @@ return {
           "rust_analyzer",
           "qmlls",
         },
-
         handlers = {
           function(server_name)
-            require("lspconfig")[server_name].setup({
-              capabilities = capabilities,
-            })
+            -- 1. Check if it's qmlls
+            if server_name == "qmlls" then
+              require('lspconfig').qmlls.setup {
+                cmd = { "qmlls" },
+                filetypes = { "qml", "qmljs" },
+                capabilities = capabilities, -- Don't forget to pass capabilities!
+                settings = {
+                  qml = {
+                    importPaths = { "/usr/lib/qt6/qml", "/usr/local/lib/qt6/qml" },
+                  }
+                }
+              }
+            else
+              -- 2. Default setup for all other servers
+              require("lspconfig")[server_name].setup({
+                capabilities = capabilities,
+              })
+            end
           end,
         },
       })

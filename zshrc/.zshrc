@@ -129,7 +129,7 @@ alias vpn='nordvpn'
 bindkey -e
 #zsh autosuggestion keybinds and colour
 bindkey '^ ' autosuggest-accept
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bold,underline"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)

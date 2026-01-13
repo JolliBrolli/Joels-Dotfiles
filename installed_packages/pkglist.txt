@@ -28,6 +28,7 @@ figlet
 flatpak
 foliate
 fzf
+gemini-cli
 ghostty
 gimp
 git
@@ -45,6 +46,7 @@ hyprlock
 hyprshade
 hyprshot
 ifuse
+lazygit
 libinput-tools
 libpulse
 linux
@@ -66,6 +68,7 @@ nwg-look
 obsidian
 openssh
 pacman-contrib
+papirus-icon-theme
 paru
 paru-debug
 pavucontrol
@@ -78,6 +81,8 @@ powertop
 prettier
 python-pip
 qt6-wayland
+quickshell-git
+qutebrowser
 reflector
 ripgrep
 rofi
@@ -102,7 +107,10 @@ touchegg
 tree
 ttf-jetbrains-mono-nerd
 ufw
+unixodbc
 unzip
+virtualbox
+wallust
 waybar
 waypaper
 wev
@@ -124,4 +132,5 @@ youtube
 zen-browser-bin
 zram-generator
 zsh
+zsh-autocomplete
 zsh-completions
