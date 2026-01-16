@@ -1,6 +1,6 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("tokyonight-night")
 -- indenting 2 spaces instead of 4
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")

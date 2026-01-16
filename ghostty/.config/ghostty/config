@@ -1,6 +1,8 @@
 theme = "Catppuccin Mocha"
-font-family = "JetBrainsMonoNerdFont"
-font-size = 15
+#font-family = "JetBrainsMonoNerdFont"
+font-family = "CaskaydiaCoveNF"
+
+font-size = 18
 background-opacity = 0.6
 
 keybind = ctrl+alt+h=new_split:left

@@ -182,7 +182,7 @@ vim.keymap.set("n", "<Leader>cr", ":CMakeRun<CR>", { desc = "[C]Make[R]un" })
 -- Keymap to close the current window/split (e.g., terminal output from CMake)
 vim.keymap.set("n", "<Leader>ct", ":CMakeRunTest<CR><C-w>j", { desc = "[C]MakeRun[T]est" })
 
-
-
+-- Floaterminal
+vim.keymap.set({'n', 't'}, "<leader>tt", ":Floaterminal<CR>")
 
 

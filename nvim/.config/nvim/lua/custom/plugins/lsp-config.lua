@@ -1,5 +1,16 @@
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 return {
+  -- Add this plugin at the top of your list
+  {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the help section for support word types
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
   {
     "mason-org/mason.nvim",
     config = function()
