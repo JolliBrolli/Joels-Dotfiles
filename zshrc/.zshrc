@@ -15,6 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
         export EDITOR="nvim"
         export VISUAL="nvim"
+export HYPRSHOT_DIR="/home/joel/Pictures/screenshots"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -124,6 +125,7 @@ alias vim='nvim'
 alias cl='clear'
 alias update='sudo pacman -Syu'
 alias install='sudo pacman -S'
+alias uninstall='sudo pacman -Rs'
 alias vpn='nordvpn'
 # Keybinding
 bindkey -e

@@ -1,7 +1,7 @@
 #!/bin/env zsh
 
 # Get the current profile name reliably
-CURRENT_MODE=$(asusctl profile -p --profile-get | grep "Active profile is" | awk '{print $NF}')
+CURRENT_MODE=$(asusctl profile get | grep "Active profile: " | awk '{print $NF}')
 
 # Define icons and tooltip based on the profile
 ICON=""

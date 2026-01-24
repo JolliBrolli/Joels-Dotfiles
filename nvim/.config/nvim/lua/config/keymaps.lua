@@ -22,6 +22,7 @@ vim.keymap.set("n", "<Esc>", clear_all_highlights, {
 })
 
 -- standard QOL Keymaps
+vim.keymap.set("i", "zz", "<Esc>")
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<C-j>", ":cnext<CR>", { desc = "Next diagnostic error" })
 vim.keymap.set("n", "<C-k>", ":cprev<CR>", { desc = "Previous diagnostic error" })

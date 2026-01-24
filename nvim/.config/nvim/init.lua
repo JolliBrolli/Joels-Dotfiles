@@ -62,4 +62,5 @@ require("lazy").setup({
 require("config.autocmds")
 require("config.options")
 require("config.keymaps")
+require("colours.hai-dang")
 require("custom.plugin.floaterminal")

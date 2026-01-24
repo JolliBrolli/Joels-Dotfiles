@@ -2,7 +2,7 @@
 
 # Get the current profile name by filtering for the "Active profile is" line,
 # then using awk to print only the last word (the profile name).
-CURRENT_MODE=$(asusctl profile -p --profile-get | grep "Active profile is" | awk '{print $NF}')
+CURRENT_MODE=$(asusctl profile get | grep "Active profile: " | awk '{print $NF}')
 
 # Define the cycle order: Quiet -> Balanced -> Performance -> Quiet
 NEW_MODE=""
@@ -27,5 +27,5 @@ echo "Current Mode: $CURRENT_MODE"
 echo "Switching to: $NEW_MODE"
 
 # Set the new profile
-asusctl profile -P "$NEW_MODE"
+asusctl profile set "$NEW_MODE"
 pkill -SIGRTMIN 2 waybar

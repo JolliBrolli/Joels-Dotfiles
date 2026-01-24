@@ -13,6 +13,7 @@ pinta
 quickshell-git
 spotify
 supergfxctl
+unityhub
 wallust
 waypaper
 whatsapp-linux-desktop

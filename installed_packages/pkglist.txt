@@ -7,6 +7,7 @@ base
 base-devel
 bat
 bauh
+bc
 blueberry
 blueman
 bluez
@@ -15,6 +16,7 @@ brightnessctl
 btop
 calc
 calcurse
+calf
 catppuccin-cursors-mocha
 discord
 dmidecode
@@ -28,6 +30,7 @@ figlet
 flatpak
 foliate
 fzf
+gamemode
 gemini-cli
 ghostty
 gimp
@@ -41,6 +44,7 @@ gst-plugin-pipewire
 gum
 gwenview
 htop
+hypridle
 hyprland
 hyprlock
 hyprshade
@@ -52,10 +56,13 @@ libpulse
 linux
 linux-firmware
 llvm
+lsp-plugins-lv2
 luarocks
 mako
 man-db
 man-pages
+mangohud
+mda.lv2
 mpv
 msitools
 neovim
@@ -105,8 +112,12 @@ tlp-rdw
 tmux
 touchegg
 tree
+ttf-cascadia-code-nerd
+ttf-fira-code
+ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
 ufw
+unityhub
 unixodbc
 unzip
 virtualbox
@@ -129,6 +140,7 @@ xwaylandvideobridge-debug
 yay
 yazi
 youtube
+zam-plugins-lv2
 zen-browser-bin
 zram-generator
 zsh

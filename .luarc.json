@@ -1,6 +1,13 @@
 {
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "Normal",
+        "Comment",
+        "String",
+        "Function",
+        "Statement",
+        "Constant",
+        "Type"
     ],
     "diagnostics.disable": [
         "unused-local",
