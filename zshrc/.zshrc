@@ -12,7 +12,8 @@ fi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
         export EDITOR="nvim"
         export VISUAL="nvim"
 export HYPRSHOT_DIR="/home/joel/Pictures/screenshots"

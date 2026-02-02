@@ -47,6 +47,7 @@ htop
 hypridle
 hyprland
 hyprlock
+hyprpicker
 hyprshade
 hyprshot
 ifuse
@@ -65,9 +66,12 @@ mangohud
 mda.lv2
 mpv
 msitools
+ncdu
 neovim
+nethogs
 networkmanager
 nmap
+nomacs
 nordvpn-bin
 npm
 nwg-dock-hyprland
@@ -133,7 +137,9 @@ winetricks
 wireplumber
 wlogout
 wmctrl
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
+xdg-desktop-portal-wlr
 xdotool
 xwaylandvideobridge
 xwaylandvideobridge-debug

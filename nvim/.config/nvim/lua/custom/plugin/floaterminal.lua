@@ -1,4 +1,5 @@
 vim.keymap.set('t', "zz", "<c-\\><c-n>")
+vim.keymap.set('t', "jj", "<c-\\><c-n>")
 local state = {
   floating = {
     buf = -1,

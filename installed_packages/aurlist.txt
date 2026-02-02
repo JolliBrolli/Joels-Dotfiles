@@ -6,6 +6,7 @@ catppuccin-cursors-mocha
 github-desktop-bin
 google-chrome
 hyprshade
+nomacs
 nordvpn-bin
 paru
 paru-debug

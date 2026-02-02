@@ -10,7 +10,7 @@
 @define-color textcolor3 #000000;
 @define-color iconcolor #000000;
 
-@keyframe
+
 @import 'universal.css';
 @import "catppuccin_theme/mocha.css";
 
