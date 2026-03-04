@@ -1,1 +1,4 @@
+app.zen_browser.zen
+com.github.tchx84.Flatseal
 dev.vencord.Vesktop
+org.flathub.flatpak-external-data-checker

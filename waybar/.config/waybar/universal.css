@@ -96,6 +96,7 @@ window#waybar.empty #window {
 
 #custom-updates,
 #custom-system,
+#custom-battery-time,
 #custom-settings,
 #custom-arch,
 #custom-power-profile,
@@ -119,6 +120,9 @@ window#waybar.empty #window {
   font-weight: bold;
 }
 
+#custom-power {
+
+}
 #battery {
 }
 

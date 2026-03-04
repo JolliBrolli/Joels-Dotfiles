@@ -12,6 +12,9 @@ fi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=Hyprland
 # export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
         export EDITOR="nvim"
@@ -128,6 +131,7 @@ alias update='sudo pacman -Syu'
 alias install='sudo pacman -S'
 alias uninstall='sudo pacman -Rs'
 alias vpn='nordvpn'
+alias c='calc'
 # Keybinding
 bindkey -e
 #zsh autosuggestion keybinds and colour

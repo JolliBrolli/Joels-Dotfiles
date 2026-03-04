@@ -27,7 +27,7 @@
     "pulseaudio",
     "bluetooth",
     "network",
-    "battery",
+    "group/power",
     "group/QuickSettings",
     "group/hardware",
     "clock"
@@ -154,7 +154,7 @@
   // Network
   "network": {
     "format": "{ifname}",
-    "format-wifi": "󰖩 {essid} {signalStrength}%",
+    "format-wifi": "󰖩 {signalStrength}%", // {essid} add this between the symbol and strength for name of wifi
     "format-ethernet": " {ifname}",
     "format-disconnected": "Disconnected ⚠",
     "tooltip-format": " {ifname} via {gwaddri}",
@@ -164,8 +164,22 @@
     "max-length": 50,
     "on-click": "~/.local/bin/network_manager_gui.sh"
   },
-  // Battery
+  // --- Power Group (Battery + Stable Time) ---
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false,
+      "tooltip": false
+    },
+    "modules": [
+      "battery", // The main icon you see
+      "custom/battery-time" // The stable time revealed in the tray
+    ]
+  },
   "battery": {
+    "tooltip": false,
     "states": {
       "good": 95,
       "warning": 30,
@@ -173,10 +187,7 @@
     },
     "format": "{icon} {capacity}%",
     "format-charging": "{icon} {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{icon}  {time}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
+    "format-plugged": " {capacity}%",
     "format-icons": {
       "default": [
         "󰁺",
@@ -203,6 +214,11 @@
         "󰂄"
       ]
     }
+  },
+  "custom/battery-time": {
+    "exec": "/home/joel/.local/bin/battery.sh",
+    "interval": 30,
+    "format": "󱎫 {}"
   },
   // Pulseaudio
   "pulseaudio": {

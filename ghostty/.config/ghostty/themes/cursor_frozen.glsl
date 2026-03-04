@@ -3,7 +3,7 @@
 
 // Animation Speed: Controls how fast the trail animation completes (in seconds).
 // Lower value = faster animation. (Original: 0.1)
-const float DURATION = 0.2;
+const float DURATION = 0.1;
 
 // Glow Multiplier
 const float GLOW_MULTIPLIER = 0.2;

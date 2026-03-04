@@ -1,4 +1,3 @@
 #!/bin/zsh
 
-#google-chrome-stable --profile-directory=Default --enable-features=TouchpadOverscrollHistoryNavigation --ozone-platform=wayland
-zen-browser
+flatpak run app.zen_browser.zen
