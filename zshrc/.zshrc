@@ -20,6 +20,7 @@ export PATH="$HOME/.local/bin:$PATH"
         export EDITOR="nvim"
         export VISUAL="nvim"
 export HYPRSHOT_DIR="/home/joel/Pictures/screenshots"
+export TERMINAL=foot
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -131,7 +132,7 @@ alias update='sudo pacman -Syu'
 alias install='sudo pacman -S'
 alias uninstall='sudo pacman -Rs'
 alias vpn='nordvpn'
-alias c='calc'
+# alias c='calc'
 # Keybinding
 bindkey -e
 #zsh autosuggestion keybinds and colour
@@ -157,39 +158,54 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 export FZF_DEFAULT_OPTS='--walker-skip=.git,node_modules,target,build,logs,timeshift,.cache,.snapshots'
 
 function file_finder_script() {
-    # 1. Define the fd command based on your FZF_DEFAULT_COMMAND variable
+
+    # 1. Define the fd command with expanded exclusions
     local FD_COMMAND='fd --type f --hidden \
         --exclude .git \
         --exclude .cache \
-        --exclude node_modules \
+        --exclude .local/state \
         --exclude .local/share/Trash \
+        --exclude "Unity/Hub/Editor" \
+        --exclude "Unity/Editor" \
+        --exclude node_modules \
+        --exclude .yarn/cache \
+        --exclude target/ \
+        --exclude build/ \
+        --exclude dist/ \
+        --exclude .next/ \
+        --exclude ".local/share/icons" \
+        --exclude .venv/ \
+        --exclude "__pycache__" \
+        --exclude "*.pyc" \
+        --exclude .DS_Store \
         --exclude timeshift \
         --exclude .snapshots \
         --exclude .log \
-        --exclude .yarn/cache \
-        --exclude target/ \
-        --exclude build/'
+        --exclude .wine \
+        --exclude .dragon-npu-env \
+        --exclude .minecraft \
+        --exclude .dotnet \
+        --exclude ".config/google-chrome/" \
+        --exclude .var \
+        --exclude .rustup \
+        --exclude ".local/share/Steam" \
+        --exclude "*.log"'
 
-    # 2. Run fd, pipe output to fzf, and store the result (the selected file)
-    # The 'eval' is used to correctly interpret the command string from the variable.
+    # 2. Run fd and pipe to fzf
     local selected_file
     selected_file="$(eval $FD_COMMAND | fzf \
-        --preview 'bat --color always {}' \
-        --bind 'focus:transform-header:file --brief {}' \
+        --preview "bat --color=always --style=numbers --line-range :500 {}" \
+        --bind "focus:transform-header:file --brief {}" \
         --ansi)"
 
-    # 3. Check if a file was actually selected (the variable is not empty)
+    # 3. Open Neovim if selection exists
     if [[ -n "$selected_file" ]]; then
-        # If a file was selected, open Neovim
         nvim "$selected_file"
     fi
-	
-    # 4. Clean up and redraw the Zsh prompt after the action
+    
+    # 4. Refresh prompt
     zle reset-prompt
-    zle redisplay
 }
 
 zle -N file_finder_script
 bindkey '^F' file_finder_script
-
-
