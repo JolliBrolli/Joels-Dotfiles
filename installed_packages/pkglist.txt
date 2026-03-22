@@ -24,6 +24,7 @@ calcurse
 calf
 cameractrls
 catppuccin-cursors-mocha
+cliphist
 discord
 dmidecode
 drm-info
@@ -52,6 +53,7 @@ github-desktop-bin
 gitleaks
 glfw
 google-chrome
+googleworkspace-cli
 gpu-screen-recorder
 gst-libav
 gst-plugin-pipewire
@@ -81,6 +83,7 @@ lact
 lazygit
 lib32-mangohud
 libcamera
+libinput-gestures
 libinput-tools
 libpulse
 linux
@@ -136,6 +139,7 @@ power-profiles-daemon
 powertop
 prettier
 protonup-qt
+python-evdev
 python-pip
 qt6-virtualkeyboard
 qt6-wayland
@@ -144,6 +148,9 @@ reflector
 ripgrep
 rofi
 rog-control-center
+ruby-fusuma
+ruby-fusuma-plugin-keypress
+ruby-fusuma-plugin-sendkey
 rustup
 sddm
 sddm-eucalyptus-drop
@@ -189,6 +196,7 @@ wireplumber
 wlogout
 wlsunset
 wmctrl
+wtype
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-wlr

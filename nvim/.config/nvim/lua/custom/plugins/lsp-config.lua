@@ -32,6 +32,7 @@ return {
           "html",
           "cssls",
           "clangd",
+          "bashls",
           "ts_ls",
           "jsonls",
           "yamlls",

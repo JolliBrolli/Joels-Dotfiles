@@ -16,6 +16,7 @@ hyprlock-git
 hyprshade
 hyprwire-git
 icloud-for-linux-git
+libinput-gestures
 linux-enable-ir-emitter
 minecraft-launcher
 noctalia-shell
@@ -30,6 +31,9 @@ plymouth-theme-cuts-git
 plymouth-theme-deus-ex-git
 protonup-qt
 rog-control-center
+ruby-fusuma
+ruby-fusuma-plugin-keypress
+ruby-fusuma-plugin-sendkey
 sddm-eucalyptus-drop
 spotify
 supergfxctl
