@@ -21,6 +21,7 @@ export PATH="$HOME/.local/bin:$PATH"
         export VISUAL="nvim"
 export HYPRSHOT_DIR="/home/joel/Pictures/screenshots"
 export TERMINAL=foot
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -132,6 +133,7 @@ alias update='sudo pacman -Syu'
 alias install='sudo pacman -S'
 alias uninstall='sudo pacman -Rs'
 alias vpn='nordvpn'
+alias tc='/opt/tablecruncher/Tablecruncher'
 # alias c='calc'
 # Keybinding
 bindkey -e
@@ -209,3 +211,4 @@ function file_finder_script() {
 
 zle -N file_finder_script
 bindkey '^F' file_finder_script
+export PATH="$HOME/bin:$PATH"

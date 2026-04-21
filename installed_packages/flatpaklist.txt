@@ -1,4 +1,6 @@
 app.zen_browser.zen
+ca.andyholmes.Valent
 com.github.tchx84.Flatseal
+com.usebottles.bottles
 dev.vencord.Vesktop
 org.flathub.flatpak-external-data-checker

@@ -1,20 +1,29 @@
-configuration {
-  modes: "window,drun,run";
-  font: "Monaspace Neon NF Medium 13";
-  show-icons: true;
-  display-drun: "Applications:";
-
-timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
-
-
+window {
+    width: 600px;
+    height: 600px;
+    background-color: transparent;
 }
 
+mainbox {
+    /* Use your house logo here */
+    background-image: url("/path/to/brandmark-design.png", both);
+    background-color: transparent;
+    
+    /* These margins "trap" the text inside the house shape */
+    /* Adjust these until your text sits inside the orange box */
+    padding: 280px 100px 50px 100px; 
+    
+    children: [ listview, inputbar ];
+}
 
-@theme "/home/joel/.config/rofi/catpuccin-default.rasi"
+listview {
+    background-color: transparent;
+    lines: 5;
+}
+
+element {
+    background-color: rgba(0,0,0,0.3); /* Slight tint so text is readable over orange */
+    text-color: white;
+}
+
+@theme "/home/joel/.local/share/rofi/themes/simple-tokyonight.rasi"

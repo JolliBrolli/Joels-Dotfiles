@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-flatpak run app.zen_browser.zen
+vivaldi --enable-features=UseOzonePlatform,TouchpadOverscrollHistoryNavigation --ozone-platform=wayland
