@@ -40,5 +40,3 @@ source = ~/.config/hypr/conf/themes/base/misc/default.conf
 source = ./dms/binds.conf
 
 source = ./dms/outputs.conf
-
-source = ./dms/cursor.conf

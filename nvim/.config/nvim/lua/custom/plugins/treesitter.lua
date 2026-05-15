@@ -33,7 +33,8 @@ return {
 					"toml",
 					"c_sharp",
 					"razor",
-          "rust"
+          "rust",
+          "python"
 				},
 				highlight = {
 					enable = true,

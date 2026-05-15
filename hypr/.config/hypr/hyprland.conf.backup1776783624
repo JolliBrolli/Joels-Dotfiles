@@ -38,7 +38,3 @@ source = ~/.config/hypr/conf/themes/base/misc/default.conf
  debug:disable_logs = true
  debug:gl_debugging = false
 source = ./dms/binds.conf
-
-source = ./dms/outputs.conf
-
-source = ./dms/cursor.conf
