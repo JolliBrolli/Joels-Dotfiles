@@ -1,51 +1,26 @@
 * {
+	all: unset;
 	background-image: none;
-	box-shadow: none;
+	transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
 }
 
 window {
-	background-color: rgba(30, 30, 46, 0.90);
+	background: rgba(0, 0, 0, 0.5);
 }
 
 button {
-	border-radius: 0;
-	border-color: #b4befe;
-	text-decoration-color: #cdd6f4;
-	color: #cdd6f4;
-	background-color: #181825;
-	border-style: solid;
-	border-width: 1px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 25%;
+	font-family: 'Material Symbols Outlined';
+	font-size: 10rem;
+	background-color: rgba(11, 11, 11, 0.4);
+	color: #FFFFFF;
+	margin: 2rem;
+	border-radius: 2rem;
+	padding: 3rem;
 }
 
-button:focus, button:active, button:hover {
-	/* 20% Overlay 2, 80% mantle */
-	background-color: rgb(48, 50, 66);
-	outline-style: none;
-}
-
-#lock {
-    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/lock.svg");
-}
-
-#logout {
-    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/logout.svg");
-}
-
-#suspend {
-    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/suspend.svg");
-}
-
-#hibernate {
-    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/hibernate.svg");
-}
-
-#shutdown {
-    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/shutdown.svg");
-}
-
-#reboot {
-    background-image: url("/home/joel/.config/wlogout/icons/mocha/lavender/reboot.svg");
+button:focus,
+button:active,
+button:hover {
+	background-color: rgba(51, 51, 51, 0.5);
+	border-radius: 4rem;
 }

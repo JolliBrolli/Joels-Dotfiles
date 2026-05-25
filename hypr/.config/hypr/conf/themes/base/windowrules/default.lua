@@ -53,7 +53,8 @@ local utils = {
   "SonyHeadphonesClient",
   "org.pulseaudio.pavucontrol",
   "gcolor3",
-  "evolution-alarm-notify"
+  "evolution-alarm-notify",
+  "xdg-desktop-portal-gtk"
 }
 
 for _, app in ipairs(utils) do
@@ -90,6 +91,23 @@ hl.window_rule({
   move = "100%-w-20 100%-h-20"
 })
 
+hl.window_rule({
+  match = { class = "^(vivaldi-app.gohighlevel.com__-Default)$"},
+  workspace = 3,
+  opacity = Opacity
+})
+
+hl.window_rule({
+  match = { class = "^((org.gnome.Calendar))$"},
+  workspace = 3,
+  opacity = Opacity
+})
+
+hl.window_rule({
+  match= { class = "^(vivaldi-meet.google.com__landing-Default)$"},
+  workspace = 3,
+  opacity = Opacity
+})
 -- Caelestia Shell (Layer Rules)
 hl.layer_rule({
   match = { namespace = "caelestia-(launcher|osd|notifications|border-exclusion|area-p)" },

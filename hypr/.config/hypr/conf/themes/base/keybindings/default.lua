@@ -17,7 +17,7 @@ local NoteTaker = "obsidian"
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind("SUPER + ALT + C", hl.dsp.window.kill())
+hl.bind("SUPER + ALT + CTRL + C", hl.dsp.window.kill())
 hl.bind("SUPER + C", hl.dsp.window.close())
 -- hl.bind("SUPER + P", hl.dsp.pseudo())
 hl.bind("SUPER + SHIFT + J", hl.dsp.layout("togglesplit"))
@@ -35,6 +35,9 @@ hl.bind("SUPER + CTRL + W", hl.dsp.exec_cmd("whatsapp-linux-desktop"))
 hl.bind("SUPER + SHIFT + CTRL + S", hl.dsp.exec_cmd("~/.local/bin/run_snapchat.sh"))
 
 hl.bind("SUPER + SHIFT + code:201", hl.dsp.exec_cmd(AiAssistant))
+hl.bind("SUPER + ALT + F", hl.dsp.exec_cmd("~/.local/bin/sync-asus"))
+
+hl.bind("SUPER + ALT + period", hl.dsp.exec_cmd("~/.local/bin/zen-gesture-toggle.sh"))
 --------------------------------------------------------------------------------
 -- NAVIGATION & WORKSPACES
 --------------------------------------------------------------------------------
@@ -77,8 +80,8 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 
 -- Screen Capture
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/screenshots/"))
-hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/screenshots/"))
-hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/screenshots/"))
+hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/Screenshots/"))
+hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots/"))
 
 -- Recording
 hl.bind("SUPER + R", hl.dsp.exec_cmd("~/.local/bin/record_screen.zsh toggle"))
@@ -89,7 +92,7 @@ hl.bind("SUPER + ALT + R", hl.dsp.exec_cmd("~/.local/bin/record_screen.zsh stop"
 hl.bind("SUPER + space", hl.dsp.exec_cmd("caelestia shell drawers toggle launcher"))
 hl.bind("SUPER + comma", hl.dsp.exec_cmd("caelestia shell controlCenter open"))
 hl.bind("SUPER + ALT + Q", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
-hl.bind("SUPER + ALT + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
+hl.bind("SUPER + ALT + L", hl.dsp.exec_cmd("ambxst lock"))
 -- hl.bind("SUPER + ALT + B", hl.dsp.exec_cmd("~/.local/bin/launch_waybar.sh"))
 hl.bind("SUPER + CTRL + ALT + W", hl.dsp.exec_cmd(ipc .. ' wallpaper random ""'))
 hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd(ipc .. " wallpaper toggle"))
@@ -98,8 +101,8 @@ hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd(ipc .. " wallpaper toggle"))
 hl.bind("SUPER + O",
   hl.dsp.exec_cmd(
   'hyprctl getoption decoration:inactive_opacity | grep -q "float: 1.0" && hyprctl keyword decoration:inactive_opacity 0.6 || hyprctl keyword decoration:inactive_opacity 1.0'))
-hl.bind("SUPER + ALT + Z", hl.dsp.exec_cmd("hyprctl dispatch dpms off"))
-hl.bind("SUPER + ALT + X", hl.dsp.exec_cmd("hyprctl dispatch dpms on"))
+hl.bind("SUPER + ALT + Z", hl.dsp.dpms("off", "eDP-1"))
+hl.bind("SUPER + ALT + X", hl.dsp.dpms("on", "eDP-1"))
 
 --------------------------------------------------------------------------------
 -- MOUSE & SUBMAPS

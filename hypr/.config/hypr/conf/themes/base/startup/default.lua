@@ -23,12 +23,13 @@ hl.exec_cmd("nwg-look -a")
 hl.exec_cmd("~/.local/bin/portal-sync.sh")
 
 -- Apps and Shell
-hl.exec_cmd("caelestia shell -d")
+-- hl.exec_cmd("caelestia shell -d")
+-- hl.exec_cmd("ambxst")
 hl.exec_cmd("flatpak run --command=valent ca.andyholmes.Valent --gapplication-service")
 
+hl.exec_cmd("/usr/local/bin/wifi-powersave-off.sh")
+
 -- Workspace-Specific Autostart
--- Note: Lua syntax uses a standard string for the command, 
--- including the workspace dispatcher prefix.
 -- hl.exec_cmd("[workspace 2 silent] ~/.local/bin/run_browser.sh")
 -- hl.exec_cmd("[workspace special:magic silent] spotify")
 end)
