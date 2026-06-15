@@ -45,14 +45,13 @@ return {
             -- 1. Check if it's qmlls
             if server_name == "qmlls" then
               require('lspconfig').qmlls.setup {
-                cmd = { "qmlls" },
+                cmd = {
+                  "qmlls",
+                  "--import-path", "/usr/lib/qt6/qml",
+                  "--import-path", "/usr/local/lib/qt6/qml",
+                },
                 filetypes = { "qml", "qmljs" },
-                capabilities = capabilities, -- Don't forget to pass capabilities!
-                settings = {
-                  qml = {
-                    importPaths = { "/usr/lib/qt6/qml", "/usr/local/lib/qt6/qml" },
-                  }
-                }
+                capabilities = capabilities,
               }
             else
               -- 2. Default setup for all other servers

@@ -1,7 +1,7 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
--- vim.cmd.colorscheme("adwaita")
+vim.cmd.colorscheme("tokyonight")
 -- indenting 2 spaces instead of 4
 -- Add this to your init.lua
 vim.o.winborder = "rounded"

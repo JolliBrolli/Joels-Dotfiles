@@ -12,7 +12,6 @@ package.path = package.path .. ";" .. os.getenv("HOME") .. "/.config/hypr/?.lua"
 -- Note: These assume you renamed your .conf files to .lua
 -------------------------------------------------------------------------------
 local home = os.getenv("HOME")
-require("conf.themes.base.lookandfeel.default")
 require("conf.themes.base.monitors.default")
 require("conf.themes.base.startup.default")
 require("conf.themes.base.environment.default")
@@ -22,8 +21,9 @@ require("conf.themes.base.keybindings.default")
 require("conf.themes.base.windowrules.default")
 require("conf.themes.base.misc.default")
 
-dofile(home .. "/.local/share/ambxst/hyprland.lua")
+-- dofile(home .. "/.local/share/ambxst/hyprland.lua")
 
+require("conf.themes.base.lookandfeel.default")
 -------------------------------------------------------------------------------
 -- DEBUG SETTINGS
 -------------------------------------------------------------------------------

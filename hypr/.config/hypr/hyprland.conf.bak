@@ -40,3 +40,11 @@ source = ~/.config/hypr/conf/themes/base/misc/default.conf
 source = ./dms/binds.conf
 
 source = ./dms/outputs.conf
+
+source = ./dms/cursor.conf
+
+# Ambxst
+source = ~/.local/share/ambxst/hyprland.conf
+
+# OVERRIDES
+# Down here you can write or source anything that you want to override from Ambxst's settings.

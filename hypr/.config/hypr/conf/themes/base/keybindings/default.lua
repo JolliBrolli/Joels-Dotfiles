@@ -38,6 +38,8 @@ hl.bind("SUPER + SHIFT + code:201", hl.dsp.exec_cmd(AiAssistant))
 hl.bind("SUPER + ALT + F", hl.dsp.exec_cmd("~/.local/bin/sync-asus"))
 
 hl.bind("SUPER + ALT + period", hl.dsp.exec_cmd("~/.local/bin/zen-gesture-toggle.sh"))
+
+hl.bind("SUPER + SHIFT + ALT + C", hl.dsp.exec_cmd("hyprpicker -f hex -a"))
 --------------------------------------------------------------------------------
 -- NAVIGATION & WORKSPACES
 --------------------------------------------------------------------------------
@@ -89,18 +91,17 @@ hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("~/.local/bin/recording/record_scre
 hl.bind("SUPER + ALT + R", hl.dsp.exec_cmd("~/.local/bin/record_screen.zsh stop"))
 
 -- Shell & Power
-hl.bind("SUPER + space", hl.dsp.exec_cmd("caelestia shell drawers toggle launcher"))
+-- hl.bind("SUPER + space", hl.dsp.exec_cmd("caelestia shell drawers toggle launcher"))
+hl.bind("SUPER + space", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind("SUPER + comma", hl.dsp.exec_cmd("caelestia shell controlCenter open"))
 hl.bind("SUPER + ALT + Q", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
 hl.bind("SUPER + ALT + L", hl.dsp.exec_cmd("ambxst lock"))
 -- hl.bind("SUPER + ALT + B", hl.dsp.exec_cmd("~/.local/bin/launch_waybar.sh"))
+hl.bind("SUPER + ALT + B", hl.dsp.exec_cmd("pkill -9 qs && qs &"))
 hl.bind("SUPER + CTRL + ALT + W", hl.dsp.exec_cmd(ipc .. ' wallpaper random ""'))
 hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd(ipc .. " wallpaper toggle"))
 
 -- Opacity & Monitor Power
-hl.bind("SUPER + O",
-  hl.dsp.exec_cmd(
-  'hyprctl getoption decoration:inactive_opacity | grep -q "float: 1.0" && hyprctl keyword decoration:inactive_opacity 0.6 || hyprctl keyword decoration:inactive_opacity 1.0'))
 hl.bind("SUPER + ALT + Z", hl.dsp.dpms("off", "eDP-1"))
 hl.bind("SUPER + ALT + X", hl.dsp.dpms("on", "eDP-1"))
 
