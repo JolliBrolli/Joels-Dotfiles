@@ -2,7 +2,7 @@
 -- Hyprland 0.55 Window Rule Migration
 
 -- Define local variables for reuse
-local Opacity = "1.0" -- Use numbers for opacity in 0.55
+local Opacity = "1.0"
 local floating_size = { 1000, 700 }
 local mail_size = { 1200, 900 }
 
@@ -11,6 +11,11 @@ hl.window_rule({
   match = { class = ".*" },
   suppress_event = "maximize"
 })
+
+-- hl.window_rule({
+--   match = { float = 1 },
+--   max_size = { 1800, 1200 } 
+-- })
 
 -- Foot terminal
 hl.window_rule({
@@ -54,7 +59,8 @@ local utils = {
   "org.pulseaudio.pavucontrol",
   "gcolor3",
   "evolution-alarm-notify",
-  "xdg-desktop-portal-gtk"
+  "xdg-desktop-portal-gtk",
+  "de.guido.ayuz"
 }
 
 for _, app in ipairs(utils) do
@@ -118,3 +124,5 @@ hl.layer_rule({
   blur = true,
   ignore_alpha = 0.57
 })
+
+hl.workspace_rule({ workspace = "3", layout = "scrolling" })

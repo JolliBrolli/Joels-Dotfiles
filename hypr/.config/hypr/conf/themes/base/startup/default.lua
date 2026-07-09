@@ -11,21 +11,26 @@ hl.exec_cmd("bash -c 'dbus-update-activation-environment --systemd WAYLAND_DISPL
 
   -- Hardware Specifics (Zenbook/Asus)
   hl.exec_cmd("asusctl profile set quiet")
-  hl.exec_cmd("~/.local/bin/zenbook_edge_handler.py")
+  -- hl.exec_cmd("~/.local/bin/zenbook_edge_handler.py")
   hl.exec_cmd("~/.local/bin/battery_optimize.sh")
 
   -- Theming and UI (GTK/Portals)
   hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
   hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'")
   hl.exec_cmd("nwg-look -a")
+  hl.exec_cmd("awww-daemon")
   -- hl.exec_cmd("~/.local/bin/portal-sync.sh")
 
   -- Apps and Shell
   -- hl.exec_cmd("caelestia shell -d")
   -- hl.exec_cmd("ambxst")
-  hl.exec_cmd("qs")
+  -- hl.exec_cmd("qs")
+hl.exec_cmd("qs")
   -- hl.exec_cmd("flatpak run --command=valent ca.andyholmes.Valent --gapplication-service")
 
+  hl.exec_cmd("wluma")
+  hl.exec_cmd("ayuz --hidden")
+  -- hl.exec_cmd("hyprpaper")
   hl.exec_cmd("sleep 2 && /usr/local/bin/wifi-powersave-off.sh")
 
   -- Workspace-Specific Autostart

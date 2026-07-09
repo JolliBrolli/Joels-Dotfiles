@@ -1,16 +1,14 @@
--- Hyprland Permissions (Hyprland 0.55)
--- Note: Changes require a restart and are not applied on-the-fly.
-
 -- Ecosystem settings
 hl.config({
     ecosystem = {
-        enforce_permissions = 1
+        enforce_permissions = true
     }
 })
 
 -- Security Rules
--- Format: hl.permission(path_regex, permission_type, action)
-hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
-hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
-hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-hl.permission("/usr/bin/quickshell", "screencopy", "allow")
+-- Format: hl.permission({ binary = "regex", type = "permission", mode = "action" })
+hl.permission({ binary = "/usr/(bin|local/bin)/grim", type = "screencopy", mode = "allow" })
+hl.permission({ binary = "/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", type = "screencopy", mode = "allow" })
+hl.permission({ binary = "/usr/(bin|local/bin)/hyprpm", type = "plugin", mode = "allow" })
+hl.permission({ binary = "/usr/bin/quickshell", type = "screencopy", mode = "allow" })
+hl.permission({ binary = "/usr/bin/hyprpicker", type = "screencopy", mode = "allow" })

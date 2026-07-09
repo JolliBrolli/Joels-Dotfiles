@@ -1,56 +1,65 @@
--- -- Look and Feel Configuration (Hyprland 0.55
+-- -- Look and Feel Configuration (Adwaita/GNOME Fluid Style)
 --
--- -- 1. Define your Curves (Beziers)
-hl.curve("snappy", {
+-- -- 1. Define your Curves (Beziers & Libadwaita-style Springs)
+-- A clean, organic ease-out curve for classic GTK-style linear transitions
+hl.curve("adwaita_ease", {
   type = "bezier",
-  points = { { 0.1, 1 }, { 0.1, 1 } }
+  points = { { 0.25, 1 }, { 0.5, 1 } }
 })
 
-hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 80, dampening = 14 })
-hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 30, dampening = 10 })
-hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
---
+-- Adwaita springs are highly dampened. They move with intent and avoid gaming-style "bounce".
+-- Tuning formula target: Dampening ≈ 2 * sqrt(stiffness * mass)
+hl.curve("adw_window", { type = "spring", mass = 1.0, stiffness = 110, dampening = 20 })
+hl.curve("adw_workspace", { type = "spring", mass = 1.0, stiffness = 95, dampening = 19 })
+hl.curve("adw_menu", { type = "spring", mass = 1.0, stiffness = 130, dampening = 22 })
+hl.curve("adw_fade", { type = "spring", mass = 1.0, stiffness = 100, dampening = 20 })
+
 -- -- 2. Define Animations
-hl.animation({ leaf = "global", enabled = true, speed = 2, spring = "default" })
-hl.animation({ leaf = "windows", enabled = true, speed = 2, spring = "spring_window", style = "slide" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1, spring = "spring_workspace", style = "slidefade" })
-hl.animation({ leaf = "fade", enabled = true, speed = 1, spring = "spring_open" })
---
--- -- 3. Main Look and Feel Settings
+hl.animation({ leaf = "global", enabled = true, speed = 1, spring = "default" })
+
+-- Windows: 'popin 90%' gives you that native GNOME window opening scale-in effect
+hl.animation({ leaf = "windows", enabled = true, speed = 1, spring = "adw_window", style = "popin 90%" })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 1, spring = "adw_window" })
+
+-- Workspaces: A smooth horizontal slide replicating the GNOME 40+ overview layout panning
+hl.animation({ leaf = "workspaces", enabled = true, speed = 1, spring = "adw_workspace", style = "slide" })
+
+-- Fade & Layers: Clean, invisible transitions for menus, tooltips, and background blurs
+hl.animation({ leaf = "fade", enabled = true, speed = 1, spring = "adw_fade" })
+hl.animation({ leaf = "layers", enabled = true, speed = 1, spring = "adw_menu", style = "popin 85%" })
+
+-- -- 3. Main Look and Feel Settings (Adwaita Theme Sync)
 hl.config({
   general = {
-    gaps_in = 2,
-    gaps_out = 4,
+    gaps_in = 6,
+    gaps_out = 6,
     border_size = 2,
     resize_on_border = true,
     allow_tearing = false,
-    -- Hex colors work as strings in Lua
-    -- ["col.active_border"] = "0xff777666",
-    -- ["col.inactive_border"] = "0xff1a1b26",
+    -- Matches Adwaita Dark's clean, subtle charcoal/gray border accents
+    ["col.active_border"] = "rgb(5e5e5e)",
+    ["col.inactive_border"] = "rgb(2d2d2d)",
   },
 
   decoration = {
-    rounding = 16,
-    -- rounding_power = 2,
+    rounding = 12, -- Absolute sweet spot for Libadwaita window corners
 
     shadow = {
       enabled = true,
-      range = 8,
-      color = "rgba(00000080)",
+      range = 15,
+      render_power = 3,
+      color = "rgba(00000044)", -- Softened up slightly for an elegant drop shadow
     },
 
     blur = {
       enabled = true,
-      size = 4,
-      passes = 2,
+      size = 5,
+      passes = 3,
       vibrancy = 0.1696,
     },
   },
 
   dwindle = {
-    --         -- pseudotile = true is removed in 0.55.0
     preserve_split = true,
   },
 
@@ -59,9 +68,9 @@ hl.config({
   },
 
   misc = {
-    force_default_wallpaper = -1,
+    force_default_wallpaper = 0,
     disable_hyprland_logo = true,
-    initial_workspace_tracking = 0,
+    initial_workspace_tracking = false,
     focus_on_activate = false,
     mouse_move_enables_dpms = true,
   }

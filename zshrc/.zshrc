@@ -21,6 +21,7 @@ export PATH="$HOME/.local/bin:$PATH"
         export EDITOR="nvim"
         export VISUAL="nvim"
 export HYPRSHOT_DIR="/home/joel/Pictures/screenshots"
+export PATH="$PATH:/home/joel/Android/Sdk/platform-tools"
 export TERMINAL=foot
 
 # Set name of the theme to load --- if set to "random", it will
@@ -29,8 +30,8 @@ export TERMINAL=foot
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
+# set list of themes to pick from when loading at random
+# setting this variable when zsh_theme=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
@@ -140,7 +141,7 @@ alias tc='/opt/tablecruncher/Tablecruncher'
 bindkey -e
 #zsh autosuggestion keybinds and colour
 bindkey '^ ' autosuggest-accept
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -192,7 +193,10 @@ function file_finder_script() {
         --exclude .var \
         --exclude .rustup \
         --exclude ".local/share/Steam" \
-        --exclude "*.log"'
+        --exclude "*.log"
+        --exclude ".claude" \
+        --exclude ".agents" \
+        --exclude ".anydesk"'
 
     # 2. Run fd and pipe to fzf
     local selected_file

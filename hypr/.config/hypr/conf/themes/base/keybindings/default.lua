@@ -16,12 +16,22 @@ local NoteTaker = "obsidian"
 --------------------------------------------------------------------------------
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
-hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
+-- Replace "SUPER + V" with whatever keybind you actually use to toggle float
+hl.bind("SUPER + V", function()
+  -- 1. Toggle the floating state of the window
+  hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+
+  -- 2. Force it to your desired dimensions
+  hl.dispatch(hl.dsp.window.resize({ x = 1800, y = 1200 }))
+
+  -- 3. Center it cleanly on the screen
+  hl.dispatch(hl.dsp.window.center())
+end)
 hl.bind("SUPER + ALT + CTRL + C", hl.dsp.window.kill())
 hl.bind("SUPER + C", hl.dsp.window.close())
 -- hl.bind("SUPER + P", hl.dsp.pseudo())
-hl.bind("SUPER + SHIFT + J", hl.dsp.layout("togglesplit"))
-hl.bind("SUPER + SHIFT + K", hl.dsp.layout("swapsplit"))
+-- hl.bind("SUPER + SHIFT + J", hl.dsp.layout("togglesplit"))
+-- hl.bind("SUPER + SHIFT + K", hl.dsp.layout("swapsplit"))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 
 -- App Shortcuts
@@ -81,9 +91,9 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 
 -- Screen Capture
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/screenshots/"))
-hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/Screenshots/"))
-hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots/"))
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -zm output -o ~/Pictures/Screenshots/"))
+hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("hyprshot -zm window -o ~/Pictures/Screenshots/"))
+hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -zm region -o ~/Pictures/Screenshots/"))
 
 -- Recording
 hl.bind("SUPER + R", hl.dsp.exec_cmd("~/.local/bin/record_screen.zsh toggle"))
@@ -104,6 +114,8 @@ hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd(ipc .. " wallpaper toggle"))
 -- Opacity & Monitor Power
 hl.bind("SUPER + ALT + Z", hl.dsp.dpms("off", "eDP-1"))
 hl.bind("SUPER + ALT + X", hl.dsp.dpms("on", "eDP-1"))
+-- AYUZ (ASUS APP)
+hl.bind("code:156", hl.dsp.exec_cmd("ayuz"))
 
 --------------------------------------------------------------------------------
 -- MOUSE & SUBMAPS
@@ -117,30 +129,88 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 -- Resize window with SUPER + Right Click
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 
--- Mail Submap
-hl.bind("SUPER + M", hl.dsp.submap("mail"))
-hl.define_submap("mail", function()
-  hl.bind("P", function()
-    hl.dsp.exec_cmd("~/.local/bin/personal_mail.sh"); hl.dsp.submap("reset")
-  end)
-  hl.bind("W", function()
-    hl.dsp.exec_cmd("~/.local/bin/work_mail.sh"); hl.dsp.submap("reset")
-  end)
-  hl.bind("M", function()
-    hl.dsp.exec_cmd("~/.local/bin/mail_app.sh"); hl.dsp.submap("reset")
-  end)
-  hl.bind("escape", hl.dsp.submap("reset"))
-  hl.bind("catchall", hl.dsp.submap("reset"))
-end)
-
--- Google Submap
-hl.bind("SUPER + G", hl.dsp.submap("google"))
-hl.define_submap("google", function()
-  hl.bind("M", function()
-    hl.dsp.exec_cmd(GoogleMeet); hl.dsp.submap("reset")
-  end)
-  hl.bind("escape", hl.dsp.submap("reset"))
-  hl.bind("catchall", hl.dsp.submap("reset"))
-end)
+-- -- Mail Submap
+-- hl.bind("SUPER + M", hl.dsp.submap("mail"))
+-- hl.define_submap("mail", function()
+--   hl.bind("P", function()
+--     hl.dsp.exec_cmd("~/.local/bin/personal_mail.sh"); hl.dsp.submap("reset")
+--   end)
+--   hl.bind("W", function()
+--     hl.dsp.exec_cmd("~/.local/bin/work_mail.sh"); hl.dsp.submap("reset")
+--   end)
+--   hl.bind("M", function()
+--     hl.dsp.exec_cmd("~/.local/bin/mail_app.sh"); hl.dsp.submap("reset")
+--   end)
+--   hl.bind("escape", hl.dsp.submap("reset"))
+--   hl.bind("catchall", hl.dsp.submap("reset"))
+-- end)
+--
 
 hl.bind("SUPER + CTRL + ALT + B", hl.dsp.exec_cmd("~/.local/bin/battery_optimize.sh"))
+hl.bind("SUPER + X", function()
+  hl.dispatch(hl.dsp.workspace.toggle_special("minimize"))
+  hl.dispatch(hl.dsp.window.move({ workspace = "+0" }))
+  hl.dispatch(hl.dsp.workspace.toggle_special("minimize"))
+  hl.dispatch(hl.dsp.window.move({ workspace = "special:minimize" }))
+  hl.dispatch(hl.dsp.workspace.toggle_special("minimize"))
+end)
+
+hl.bind("SUPER + tab", function()
+  local layouts   = { "scrolling", "dwindle" }
+  local workspace = hl.get_active_workspace()
+  if hl.get_active_special_workspace() then
+    workspace = hl.get_active_special_workspace()
+  end
+
+  local next_layout = "dwindle"
+
+  if not workspace then
+    return
+  end
+
+  for i = 1, #layouts do
+    if layouts[i] == workspace.tiled_layout then
+      local next_layout_idx = (i % #layouts) + 1
+      next_layout = layouts[next_layout_idx]
+      hl.exec_cmd(string.format('notify-send -e "Layout Change:" "Layout has changed to %s"', next_layout))
+      break
+    end
+  end
+
+  if workspace.special then
+    hl.workspace_rule({ workspace = tostring(workspace.name), layout = next_layout })
+  else
+    hl.workspace_rule({ workspace = tostring(workspace.id), layout = next_layout })
+  end
+end)
+
+local function layout_bind(bind_table)
+  return function()
+    local workspace = hl.get_active_special_workspace() or
+        hl.get_active_workspace()
+
+    if not workspace then
+      return
+    end
+
+    local layout = workspace.tiled_layout
+
+    if bind_table[layout] then
+      hl.dispatch(bind_table[layout])
+    end
+  end
+end
+
+hl.bind("SUPER + J", layout_bind({
+  scrolling = hl.dsp.layout("swapcol l"),   -- Scrolling: swap column with left one
+  dwindle   = hl.dsp.layout("swapsplit"),   -- Dwindle: swap window split
+  monocle   = hl.dsp.layout("cycleprev"),   -- Monocle and master: cycle prev window
+  master    = hl.dsp.layout("cycleprev"),
+}))
+
+hl.bind("SUPER + K", layout_bind({
+  scrolling = hl.dsp.layout("swapcol r"),     -- Scrolling: swap column with right one
+  dwindle   = hl.dsp.layout("togglesplit"),   -- Dwindle: toggle window split
+  monocle   = hl.dsp.layout("cyclenext"),     -- Monocle and master: cycle next window
+  master    = hl.dsp.layout("cyclenext"),
+}))

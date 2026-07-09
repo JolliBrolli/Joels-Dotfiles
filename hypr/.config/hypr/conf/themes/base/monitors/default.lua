@@ -5,7 +5,10 @@ hl.monitor({
   mode = "2880x1800@120",
   position = "0x0",
   scale = 1,
+  bitdepth = 10, -- Activates 10-bit color for the OLED panel
+  cm = "auto",
 })
+
 
 -- Lid Switch Logic
 -- Use hl.bindl for "locked" binds (works when screen is off/locked)
